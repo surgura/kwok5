@@ -1,14 +1,23 @@
-extends "res://inventory/interfaces/IDestructible.gd"
+extends Node2D
 
-var durability = 10
+var item_name = "itemname"
+var current_durability = 10 #variable
+var maximum_durability = 10 #const?
+
+var isDestructible = true
+
+var weight = 10 #const?
+
+func set_durability(newDurabilityValue):
+	if (isDestructible):
+		current_durability = clamp(newDurabilityValue, 0, maximum_durability)
+		return true
+	else:
+		return false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 func TakeDamage(amount):
 	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
