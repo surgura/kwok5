@@ -2,7 +2,6 @@ extends Node2D
 
 var hook_scene = preload("res://hook.tscn")
 var hook_instance = null
-var weight = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

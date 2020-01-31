@@ -14,5 +14,12 @@ script = ExtResource( 1 )
 scale = Vector2( 0.153076, 0.153076 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="shape_dummy" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+disabled = true
+
+[node name="catch_area" type="Area2D" parent="."]
+
+[node name="collision_shape" type="CollisionShape2D" parent="catch_area"]
 shape = SubResource( 1 )
