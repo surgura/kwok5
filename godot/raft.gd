@@ -13,4 +13,5 @@ func _process(_delta):
 		if hook_instance == null:
 			print("make hook")
 			hook_instance = hook_scene.instance()
+			hook_instance.return_node = self.get_path()
 			get_node("../").add_child(hook_instance)
