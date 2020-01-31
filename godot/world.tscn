@@ -15,3 +15,4 @@ position = Vector2( 159.266, 151.209 )
 position = Vector2( 290.612, 46.7651 )
 
 [node name="camera" type="Camera2D" parent="raft"]
+current = true
