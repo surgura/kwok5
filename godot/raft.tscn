@@ -5,5 +5,5 @@
 [node name="raft" type="Node2D"]
 
 [node name="sprite" type="Sprite" parent="."]
-scale = Vector2( 0.384499, 0.384499 )
+scale = Vector2( 0.149004, 0.149004 )
 texture = ExtResource( 1 )
