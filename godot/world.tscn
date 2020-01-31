@@ -6,13 +6,12 @@
 [node name="world" type="Node2D"]
 
 [node name="trash" parent="." instance=ExtResource( 1 )]
-position = Vector2( 844.17, 192.085 )
+position = Vector2( -262.305, -201.415 )
 
 [node name="trash2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 159.266, 151.209 )
 
 [node name="raft" parent="." instance=ExtResource( 2 )]
-position = Vector2( 290.612, 46.7651 )
 
 [node name="camera" type="Camera2D" parent="raft"]
 current = true
