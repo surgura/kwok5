@@ -1,6 +1,4 @@
-extends KinematicBody2D
-
-var weight = 10
+extends RigidBody2D
 
 func _ready():
 	pass

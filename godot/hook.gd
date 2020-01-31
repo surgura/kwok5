@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 var direction
 var speed = 100
@@ -6,18 +6,10 @@ var caught_item = null
 export(NodePath) var raft_path
 
 func _ready():
-	direction = (get_global_mouse_position() - self.global_position).normalized()
+	apply_central_impulse((get_global_mouse_position() - self.global_position).normalized() * speed)
 
 func _physics_process(delta):
-	#if hit_item:
-	#	direction = (get_node(raft).global_position - self.global_position).normalized()
-	
-	if caught_item == null:
-		var collision = move_and_collide(direction * speed * delta)
-		if collision:
-			caught_item = collision.get_collider()
-			get_node("./collision_shape").disabled = true
-	else:
+	if caught_item != null:
 		var raft = get_node(raft_path)
 		var raft_weight = raft.weight
 		var item_weight = caught_item.weight
@@ -25,6 +17,12 @@ func _physics_process(delta):
 		var ratio_item = 1-ratio_raft
 		var raft_direction = (caught_item.global_position - raft.global_position).normalized()
 		var item_direction = (raft.global_position - caught_item.global_position).normalized()
-		raft.move_and_collide(raft_direction * ratio_raft * speed * delta)
-		caught_item.move_and_collide(item_direction * ratio_item * speed * delta)
 		
+		raft.apply_central_impulse(raft_direction * ratio_item * speed * delta)
+		caught_item.apply_central_impulse(item_direction * ratio_item * speed * delta)		
+
+func _on_catch_area_body_shape_entered(body_id, body, body_shape, area_shape):
+	caught_item = body
+	# remove all children of this node. we will just execute script now
+	for child in get_children():
+		child.queue_free()

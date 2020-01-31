@@ -5,7 +5,9 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="raft" type="KinematicBody2D"]
+[node name="raft" type="RigidBody2D"]
+mode = 2
+mass = 10.0
 script = ExtResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
