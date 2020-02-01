@@ -1,10 +1,9 @@
-extends Node2D
+extends RigidBody2D
 
 var is_fixed = true # Very heavy objects (e.g. rocks, or your mom) are fixed in place.
-var weight = 1.0
 var velocity = Vector2(0, 0)
-var is_being_hooked = false
 var destroy_on_impact = false
+export(bool) var is_being_reeled = false
 
 func _ready():
 	pass
