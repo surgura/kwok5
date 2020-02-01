@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://floating_items/rock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://raft.tscn" type="PackedScene" id=2]
 [ext_resource path="res://floating_items/wooden_plank.tscn" type="PackedScene" id=3]
 [ext_resource path="res://floating_items/shark.tscn" type="PackedScene" id=4]
 [ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sea.tscn" type="PackedScene" id=6]
 
 [node name="world" type="Node2D"]
 
@@ -15,6 +16,7 @@ position = Vector2( 999.955, -542.002 )
 position = Vector2( 548.687, -205.905 )
 
 [node name="raft" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 8.7236, 18.6952 )
 inventory_path = NodePath("../gui/inventory")
 
@@ -77,3 +79,6 @@ position = Vector2( 72.9048, -248.059 )
 
 [node name="shark3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1553.7, -313.323 )
+
+[node name="sea" parent="." instance=ExtResource( 6 )]
+z_index = -100
