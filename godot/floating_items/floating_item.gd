@@ -27,12 +27,12 @@ func on_hit_raft() -> void:
 	
 # Returns an inventory item or null.
 func maybe_get_item(inventory : Object):
-#	if (!can_pickup(inventory_items)):
-#		return null
+	if (!can_pickup(inventory)):
+		return null
 	
 	return get_item()
 
-func can_pickup(inventory_items: Array) -> bool:
+func can_pickup(inventory : Object) -> bool:
 	return false
 
 func get_item():

@@ -16,15 +16,14 @@ func _process(_delta):
 func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	var inventory = get_node(inventory_path)
 	var item = body.maybe_get_item(inventory)
-	# TODO add item to inventory
+	if item:
+		inventory.addItem(item)
 	var damage = body.get_damage(self.mass, self.get_linear_velocity(), inventory)
 	# TODO apply damage to inventory
 	body.on_hit_raft()
 	if hook_instance != null and hook_instance.caught_item == body:
-		print("asdsa")
+		print("caught item hit raft")
 		self.release_hook()
-	else:
-		print("xxx")
 
 func interact_hook():
 	if hook_instance == null:
