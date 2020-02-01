@@ -8,6 +8,6 @@ func _ready():
 	pass
 
 func _draw():
-	  
-	#get_node("Sprite").texture.
+	var sprite = get_node("Sprite");
+	sprite.region_rect.size.y = 32
 	pass

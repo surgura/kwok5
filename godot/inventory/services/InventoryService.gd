@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var ExampleItemScene = preload("res://inventory/scenes/ExampleItemScene.tscn")
 
@@ -9,7 +9,7 @@ func _ready():
 	add_item("ExampleItem")
 	add_item("ExampleItem")
 	add_item("ExampleItem")
-	take_damage(31)
+	#take_damage(31)
 	output()
 
 # Reduces durability
