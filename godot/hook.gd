@@ -22,10 +22,9 @@ func _physics_process(delta):
 		raft.apply_central_impulse(raft_direction * ratio_item * reel_force * delta)
 		caught_item.apply_central_impulse(item_direction * ratio_item * reel_force * delta)		
 
-func _on_catch_area_area_shape_entered(body_id, body, body_shape, area_shape):
-	caught_item = body.get_parent()
+func _on_catch_area_body_shape_entered(body_id, body, body_shape, area_shape):
+	caught_item = body
 	caught_item.is_being_reeled = true
 	# remove all children of this node. we will just execute script now
 	for child in get_children():
 		child.queue_free()
-
