@@ -13,7 +13,7 @@ func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	var inventory = get_node(inventory_path)
 	var item = body.maybe_get_item(inventory)
 	if item:
-		inventory.addItem(item)
+		inventory.add_item(item)
 	var damage = body.get_damage(self.mass, self.get_linear_velocity(), inventory)
 	# TODO apply damage to inventory
 	body.on_hit_raft()

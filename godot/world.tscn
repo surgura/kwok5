@@ -1,34 +1,36 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://raft.tscn" type="PackedScene" id=1]
-[ext_resource path="res://inventory/scenes/InventoryScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://floating_items/rock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://floating_items/wooden_plank.tscn" type="PackedScene" id=4]
-[ext_resource path="res://floating_items/shark.tscn" type="PackedScene" id=5]
+[ext_resource path="res://floating_items/rock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://floating_items/wooden_plank.tscn" type="PackedScene" id=3]
+[ext_resource path="res://floating_items/shark.tscn" type="PackedScene" id=4]
+[ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=5]
 
 [node name="world" type="Node2D"]
 
 [node name="raft" parent="." instance=ExtResource( 1 )]
-inventory_path = NodePath("../inventory")
+inventory_path = NodePath("../gui/inventory")
 
 [node name="camera" type="Camera2D" parent="raft"]
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 
-[node name="inventory" parent="." instance=ExtResource( 2 )]
-
-[node name="rock" parent="." instance=ExtResource( 3 )]
+[node name="rock" parent="." instance=ExtResource( 2 )]
 position = Vector2( 285.601, 66.8073 )
 
-[node name="rock2" parent="." instance=ExtResource( 3 )]
+[node name="rock2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 63.467, -243.847 )
 
-[node name="rock3" parent="." instance=ExtResource( 3 )]
+[node name="rock3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -295.622, 36.744 )
 
-[node name="wooden_plank" parent="." instance=ExtResource( 4 )]
+[node name="wooden_plank" parent="." instance=ExtResource( 3 )]
 position = Vector2( -232.155, -165.348 )
 
-[node name="shark" parent="." instance=ExtResource( 5 )]
+[node name="shark" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320.675, -138.625 )
+
+[node name="gui" type="CanvasLayer" parent="."]
+
+[node name="inventory" parent="gui" instance=ExtResource( 5 )]
