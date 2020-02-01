@@ -2,7 +2,7 @@ extends ItemModel
 
 
 func _init():
-	.init("ExampleItem", 10, 10, true, 1)
+	.init("ExampleItem", 10, 10, true, 1, 1)
 
 func _ready():
 	pass
