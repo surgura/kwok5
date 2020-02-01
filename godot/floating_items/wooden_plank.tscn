@@ -11,6 +11,8 @@ collision_layer = 3
 collision_mask = 3
 mode = 2
 script = ExtResource( 1 )
+destroy_on_impact = true
+can_release_hook = true
 
 [node name="sprite" type="Sprite" parent="."]
 scale = Vector2( 0.153076, 0.153076 )
