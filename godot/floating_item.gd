@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 var is_fixed = true # Very heavy objects (e.g. rocks, or your mom) are fixed in place.
-var velocity = Vector2(0, 0)
 var destroy_on_impact = false
 export(bool) var is_being_reeled = false
 
@@ -9,15 +8,15 @@ func _ready():
 	pass
 
 # The damage this item deals to the raft.
-func get_damage(ship_weight, ship_velocity, inventory_items):
-	return get_weight_damage_factor(ship_weight) * get_speed_damage_factor((ship_velocity - velocity).length()) * get_base_damage()
+func get_damage(ship_weight, ship_velocity : Vector2, inventory_items : Array):
+	return get_weight_damage_factor(ship_weight) * get_speed_damage_factor((ship_velocity - get_linear_velocity()).length()) * get_base_damage()
 
 # Default weight damage factor. Function starting at 1 with asymptote at 2.
 func get_weight_damage_factor(ship_weight):
 	return 1 + (1 - exp(-ship_weight))
 
 # Default impact speed damage factor.
-func get_speed_damage_factor(impact_speed):
+func get_speed_damage_factor(impact_speed : float):
 	return 1 + (impact_speed / 10)
 
 # Base damage.
@@ -30,13 +29,13 @@ func on_hit_raft():
 		self.queue_free()
 	
 # Returns an inventory item or null.
-func maybe_get_item(inventory_items):
+func maybe_get_item(inventory_items : Array):
 	if (!can_pickup(inventory_items)):
 		return null
 	
 	return get_item()
 
-func can_pickup(inventory_items):
+func can_pickup(inventory_items: Array):
 	return false
 
 func get_item():
