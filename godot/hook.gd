@@ -4,6 +4,9 @@ export(float) var throw_force = 2500
 export(float) var reel_force = 200
 export(NodePath) var raft_path
 
+var release_force = 500
+var is_releasing = false
+
 var caught_item = null
 
 func _ready():
@@ -20,13 +23,22 @@ func _physics_process(delta):
 		raft.apply_central_impulse(raft_direction * reel_force / 2 * delta)
 		caught_item.apply_central_impulse(item_direction * reel_force / 2 * delta)
 	
+	if (is_releasing):
+		var to_raft = get_node(raft_path).global_position - self.global_position
+		apply_central_impulse(to_raft.normalized() * release_force)
+		if (to_raft.length() < 80.0):
+			get_node(raft_path).catch_hook()
+	
 func _draw():
 	#var begin: Position2D = get_node("fishline_begin")
 	var end = Vector2()
 	if caught_item != null:
 		end = caught_item.global_transform.origin - global_transform.origin
 	var begin = get_node(raft_path).get_node("fishline_begin").global_transform.origin - global_transform.origin
-	draw_line(begin, end, Color(220, 220, 220), 2)
+	draw_line(begin, end, Color(255, 220, 160), 1.0, true)
+	
+	if (get_node("sprite")):
+		get_node("sprite").rotation = (end - begin).angle() - PI / 2
 
 func _on_catch_area_body_shape_entered(_body_id, body, _body_shape, _area_shape):
 	print("asdasd")
@@ -37,9 +49,12 @@ func _on_catch_area_body_shape_entered(_body_id, body, _body_shape, _area_shape)
 		child.queue_free()
 		
 func can_release():
-	return caught_item == null or caught_item.can_release_hook
+	return (caught_item == null) or caught_item.can_release_hook
 	
 func release():
 	if caught_item != null:
 		caught_item.is_being_reeled = false
 		caught_item = null
+		get_node(raft_path).catch_hook()
+		
+	is_releasing = true

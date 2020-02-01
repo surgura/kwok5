@@ -1,5 +1,8 @@
 extends Control
 
+const ICON_SIZE: int = 64
+const ITEMS_OFFSET: Vector2 = Vector2(16, 16)
+
 var item_map = {
 	"ExampleItem": preload("res://inventory/scenes/ExampleItemScene.tscn"),
 	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn")
@@ -14,6 +17,15 @@ func _ready():
 	add_item("ExampleItem")
 	#take_damage(31)
 	output()
+	
+func _process(delta):
+	var screen_size: Vector2 = get_viewport().size
+	var bottom_offset: int = 0
+	for i in range(len(items)-1, -1, -1):
+		items[i].position.y = screen_size.y - ICON_SIZE/2 - int(ITEMS_OFFSET.y) - bottom_offset
+		items[i].position.x = int(ITEMS_OFFSET.x) + ICON_SIZE/2
+		bottom_offset += ICON_SIZE
+		#region_rect.size.y = 32
 
 # Reduces durability
 func take_damage(damage: float):
@@ -24,17 +36,15 @@ func take_damage(damage: float):
 	head.take_damage(damage)
 	if (head.durability_current <= 0):
 		remove_item(head.item_name, head.quantity)
-		
-	redraw_items()
 
 # Adds item to inventory
 func add_item(item_name: String) -> Object:
 	var item_instance = null
 	if item_map.has(item_name):
 		item_instance = _custom_add_item(item_map[item_name].instance())
+		sort()
 	else:
 		print("Item (" + item_name + ") not found")
-	redraw_items()
 	return item_instance
 
 # Finds item with given item_name
@@ -50,31 +60,35 @@ func remove_item(item_name: String, quantity: int) -> bool:
 	if (item_instance == null):
 		return false
 	else:
-		if (quantity > item_instance.quantity):
-			return false
-		else:
-			item_instance.quantity -= quantity
-			item_instance.durability_current -= (quantity * item_instance.durability_per_item)
-			if (item_instance.quantity == 0):
-				items.erase(item_instance)
-				item_instance.queue_free()
-				print("removed " + item_instance.item_name)
-			else:
-				print("removed " + str(item_instance.quantity) + item_instance.item_name)
-			redraw_items()
-			return true
+		items.erase(item_instance)
+		item_instance.queue_free()
+		print("removed " + item_instance.item_name)
+		return true
 
 # Helper function to add item instances to inventory
 func _custom_add_item(item_instance: Object):
-	var existingItem = find_item(item_instance.item_name)
-	if (existingItem == null):
-		items.push_front(item_instance)
-		self.add_child(item_instance)
-	else:
-		existingItem.quantity += item_instance.quantity
-		existingItem.durability_current += item_instance.durability_current
-		#existingItem.UpdateGraphics()
+	items.push_front(item_instance)
+	self.add_child(item_instance)
+	#existingItem.UpdateGraphics()
 
+# Gets number of itemName
+func get_item_count(itemName: String) -> int:
+	var count = 0
+	for i in range(0, items.size()):
+		if (items[i].item_name == itemName):
+			count += 1
+	return count 
+
+func sort():
+	items.sort_custom(self, "priorityComparison")
+	pass
+	
+func priorityComparison(a, b):
+    if typeof(a) != typeof(b):
+        return typeof(a) < typeof(b)
+    else:
+        return a.priority < b.priority
+		
 # Gets total weight of items
 func get_total_weight() -> int:
 	var total_weight = 0
@@ -83,7 +97,7 @@ func get_total_weight() -> int:
 	return total_weight
 
 # Gets total durability of items
-func get_total_turability() -> int:
+func get_total_durability() -> int:
 	var total_durability = 0
 	for i in range(0, items.size()):
 		total_durability += items[i].current_durability
@@ -95,16 +109,4 @@ func output():
 		print(
 		  "NAME:         " + items[i].item_name 
 		+ "\nDURABILITY: " + str(items[i].durability_current)
-		+ "\nQUANTITY:   " + str(items[i].quantity)
 		)
-		
-func redraw_items():
-	pass
-	#for i in range(0, items.size()):
-	#	items[i].position.x = 100
-	# set height for every item
-	# set pisition for every item
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
