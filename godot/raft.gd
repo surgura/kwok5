@@ -46,6 +46,10 @@ func throw_hook():
 func release_hook():
 	if hook_instance != null:
 		hook_instance.release()
+		get_node("character").release_hook()
+
+func catch_hook():
+	if hook_instance != null:
 		hook_instance.queue_free()
 		hook_instance = null
-		get_node("character").release_hook()
+	

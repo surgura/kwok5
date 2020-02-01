@@ -4,6 +4,9 @@ export(float) var throw_force = 2500
 export(float) var reel_force = 200
 export(NodePath) var raft_path
 
+var release_force = 500
+var is_releasing = false
+
 var caught_item = null
 
 func _ready():
@@ -21,6 +24,12 @@ func _physics_process(delta):
 		var item_direction = (raft.global_position - caught_item.global_position).normalized()
 		raft.apply_central_impulse(raft_direction * reel_force / 2 * delta)
 		caught_item.apply_central_impulse(item_direction * reel_force / 2 * delta)
+	
+	if (is_releasing):
+		var to_raft = get_node(raft_path).global_position - self.global_position
+		apply_central_impulse(to_raft.normalized() * release_force)
+		if (to_raft.length() < 80.0):
+			get_node(raft_path).catch_hook()
 	
 func _draw():
 	#var begin: Position2D = get_node("fishline_begin")
@@ -48,3 +57,6 @@ func release():
 	if caught_item != null:
 		caught_item.is_being_reeled = false
 		caught_item = null
+		get_node(raft_path).catch_hook()
+		
+	is_releasing = true
