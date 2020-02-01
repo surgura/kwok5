@@ -5,7 +5,7 @@ var ExampleItemScene = preload("res://inventory/scenes/ExampleItemScene.tscn")
 var items = Array() 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	add_item("ExampleItem")
 	add_item("ExampleItem")
 	add_item("ExampleItem")
@@ -21,6 +21,8 @@ func take_damage(damage: float):
 	head.take_damage(damage)
 	if (head.durability_current <= 0):
 		remove_item(head.item_name, head.quantity)
+		
+	redraw_items()
 
 # Adds item to inventory
 func add_item(item_name: String) -> Object:
@@ -30,6 +32,7 @@ func add_item(item_name: String) -> Object:
 			_custom_add_item(ExampleItemScene.instance())
 		_:
 			print("Item (" + item_name + ") not found")
+	redraw_items()
 	return item_instance
 
 # Finds item with given item_name
@@ -56,6 +59,7 @@ func remove_item(item_name: String, quantity: int) -> bool:
 				print("removed " + item_instance.item_name)
 			else:
 				print("removed " + str(item_instance.quantity) + item_instance.item_name)
+			redraw_items()
 			return true
 
 # Helper function to add item instances to inventory
@@ -91,6 +95,13 @@ func output():
 		+ "\nDURABILITY: " + str(items[i].durability_current)
 		+ "\nQUANTITY:   " + str(items[i].quantity)
 		)
+		
+func redraw_items():
+	pass
+	#for i in range(0, items.size()):
+	#	items[i].position.x = 100
+	# set height for every item
+	# set pisition for every item
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
