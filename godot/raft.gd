@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 
 var hook_scene = preload("res://hook.tscn")
 var hook_instance = null
@@ -14,3 +14,10 @@ func _process(_delta):
 			hook_instance = hook_scene.instance()
 			hook_instance.raft_path = self.get_path()
 			get_node("../").add_child(hook_instance)
+
+
+func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
+	var item = body.maybe_get_item([]) # TODO
+	var damage = body.get_damage(self.mass, self.get_linear_velocity(), []) # TODO
+	body.on_hit_raft()
+	
