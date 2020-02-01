@@ -7,7 +7,9 @@ var items = Array()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	#addItem("ExampleItem")
+	addItem("ExampleItem")
+	addItem("ExampleItem")
+	addItem("ExampleItem")
 	#addItem("ITEMNAMESTUFF2")
 	#print(findItem("dgsg"))
 	#print(findItem("exampleitem"))
@@ -19,13 +21,19 @@ func addItem(itemName):
 	var itemInstance = null
 	match itemName:
 		"ExampleItem":
-			itemInstance = ExampleItemScene.instance()
-			items.push_front(itemInstance)
-			self.add_child(itemInstance)
+			customAddItem(ExampleItemScene.instance())
 		_:
 			print("Item (" + itemName + ") not found")
 	return itemInstance
 
+func customAddItem(itemInstance):
+	var existingItem = findItem(itemInstance.Name)
+	if (existingItem == null):
+		items.push_front(itemInstance)
+		self.add_child(itemInstance)
+	else:
+		existingItem.Quantity += itemInstance.Quantity
+		#existingItem.UpdateGraphics()
 
 func findItem(itemName):
 	for i in range(0, items.size()):
@@ -51,7 +59,7 @@ func getTotalWeight():
 
 func outputInventoryToConsole():
 	for i in range(0, items.size()):
-		print(str(i) + " " + items[i].Name)
+		print(str(i) + " " + items[i].Name + "(" + str(items[i].Quantity)+ ")")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
