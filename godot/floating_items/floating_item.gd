@@ -11,7 +11,7 @@ func _init(is_fixed : bool = true, destroy_on_impact : bool = false, can_release
 	self.can_release_hook = can_release_hook
 
 # The damage this item deals to the raft.
-func get_damage(ship_weight : float, ship_velocity : Vector2, inventory_items : Array) -> float:
+func get_damage(ship_weight : float, ship_velocity : Vector2, inventory : Object) -> float:
 	return get_weight_damage_factor(ship_weight) * get_speed_damage_factor((ship_velocity - get_linear_velocity()).length()) * get_base_damage()
 
 # Default weight damage factor. Function starting at 1 with asymptote at 2.
@@ -32,9 +32,9 @@ func on_hit_raft() -> void:
 		self.queue_free()
 	
 # Returns an inventory item or null.
-func maybe_get_item(inventory_items : Array):
-	if (!can_pickup(inventory_items)):
-		return null
+func maybe_get_item(inventory : Object):
+#	if (!can_pickup(inventory_items)):
+#		return null
 	
 	return get_item()
 

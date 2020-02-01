@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://floating_items/floating_item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://raft.tscn" type="PackedScene" id=2]
+[ext_resource path="res://inventory/scenes/InventoryScene.tscn" type="PackedScene" id=3]
 
 [node name="world" type="Node2D"]
 
@@ -12,8 +13,11 @@ position = Vector2( -262.305, -201.415 )
 position = Vector2( 159.266, 151.209 )
 
 [node name="raft" parent="." instance=ExtResource( 2 )]
+inventory_path = NodePath("../inventory")
 
 [node name="camera" type="Camera2D" parent="raft"]
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
+
+[node name="inventory" parent="." instance=ExtResource( 3 )]
