@@ -1,5 +1,8 @@
 extends Control
 
+const ICON_SIZE: int = 32
+const ITEMS_OFFSET: Vector2 = Vector2(32, 32)
+
 var item_map = {
 	"ExampleItem": preload("res://inventory/scenes/ExampleItemScene.tscn"),
 	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn")
@@ -24,8 +27,6 @@ func take_damage(damage: float):
 	head.take_damage(damage)
 	if (head.durability_current <= 0):
 		remove_item(head.item_name, head.quantity)
-		
-	redraw_items()
 
 # Adds item to inventory
 func add_item(item_name: String) -> Object:
@@ -34,7 +35,6 @@ func add_item(item_name: String) -> Object:
 		item_instance = _custom_add_item(item_map[item_name].instance())
 	else:
 		print("Item (" + item_name + ") not found")
-	redraw_items()
 	return item_instance
 
 # Finds item with given item_name
@@ -61,7 +61,6 @@ func remove_item(item_name: String, quantity: int) -> bool:
 				print("removed " + item_instance.item_name)
 			else:
 				print("removed " + str(item_instance.quantity) + item_instance.item_name)
-			redraw_items()
 			return true
 
 # Helper function to add item instances to inventory
@@ -98,13 +97,9 @@ func output():
 		+ "\nQUANTITY:   " + str(items[i].quantity)
 		)
 		
-func redraw_items():
-	pass
-	#for i in range(0, items.size()):
-	#	items[i].position.x = 100
-	# set height for every item
-	# set pisition for every item
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _draw():
+	var screen_size: Vector2 = get_viewport().size
+	var bottom_offset: int = 0
+	for item in items:
+		item.position.y = screen_size.y - ICON_SIZE/2 - int(ITEMS_OFFSET.y) - bottom_offset
+		item.position.x = int(ITEMS_OFFSET.x) + ICON_SIZE/2

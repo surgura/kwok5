@@ -11,6 +11,8 @@ var quantity: int
 var is_destructible: bool
 var priority: int
 
+const ICON_SIZE: int = 32
+
 # Decreases durability
 # Returns excessive damage
 func take_damage(damage: float) -> int:
@@ -45,9 +47,11 @@ func init(item_name: String, durability: float, weight: int, is_destructible: bo
 	self.quantity = quantity 
 	self.priority = priority
 	print(name, durability_current, weight, is_destructible, quantity, priority)
-	
+
 func _ready():
-	pass 
+	var texsize = texture.get_size()
+	var scale: float = ICON_SIZE / max(texsize.x, texsize.y)
+	set_scale(Vector2(scale, scale))
 
 func _process(delta):
 	pass
