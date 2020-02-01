@@ -11,7 +11,6 @@ collision_layer = 3
 collision_mask = 3
 mode = 2
 script = ExtResource( 1 )
-destroy_on_impact = true
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( -4.86322, -1.62108 )

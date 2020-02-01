@@ -1,6 +1,12 @@
 extends RigidBody2D
 
-export(bool) var destroy_on_impact : bool = false
+enum DestroyTrigger {
+	IMPACT,
+	CATCH,
+	NEVER	
+}
+
+export(DestroyTrigger) var destroy_trigger = DestroyTrigger.IMPACT
 export(bool) var can_release_hook : bool = false
 export(bool) var is_being_reeled : bool = false
 
@@ -22,7 +28,7 @@ func get_base_damage():
 
 # What should happen when the item collides with the raft.
 func on_hit_raft() -> void:
-	if (destroy_on_impact):
+	if destroy_trigger == DestroyTrigger.IMPACT or (destroy_trigger == DestroyTrigger.CATCH and is_being_reeled):
 		self.queue_free()
 	
 # Returns an inventory item or null.
