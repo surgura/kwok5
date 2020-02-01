@@ -35,14 +35,14 @@ func _ready():
 		for y in range(numRows):
 			waves[x].append(Wave.instance())
 			self.add_child(waves[x][y])
-			waves[x][y].set_z_index(y)
-			waves[x][y].setup(random)
 			
 			var pos = Vector2(x * waveDistanceX, y * waveDistanceY)
 			if y % 2 == 0:
 				pos.x += 0.5 * waveDistanceX
 			
 			waves[x][y].basePosition = pos
+			
+			waves[x][y].setup(random)
 	
 	#for x in range(numColumns):
 #		for y in range(numRows):
