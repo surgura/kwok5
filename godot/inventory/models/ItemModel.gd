@@ -4,13 +4,13 @@ class_name ItemModel
 
 var item_name: String
 var durability_current: float
-var durability_per_item: float
+var durability_maximum: float
 var weight: int
 
 var is_destructible: bool
 var priority: int
 
-const ICON_SIZE: int = 64
+const ICON_SIZE: int = 40
 
 # Decreases durability
 # Returns excessive damage
@@ -33,7 +33,7 @@ func set_durability(new_value: float) -> bool:
 func init(item_name: String, durability: float, weight: int, is_destructible: bool, priority: int):
 	self.item_name = item_name
 	self.durability_current = durability
-	self.durability_per_item = durability
+	self.durability_maximum = durability
 	self.weight = weight
 	self.is_destructible = is_destructible
 	

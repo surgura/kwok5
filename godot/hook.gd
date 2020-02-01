@@ -43,7 +43,6 @@ func _draw():
 		get_node("sprite").rotation = (end - begin).angle() - PI / 2
 
 func _on_catch_area_body_shape_entered(_body_id, body, _body_shape, _area_shape):
-	print("asdasd")
 	caught_item = body
 	caught_item.is_being_reeled = true
 	# remove all children of this node. we will just execute script now

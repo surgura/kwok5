@@ -22,10 +22,9 @@ func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	if item:
 		inventory.add_item(item)
 	var damage = body.get_damage(self.mass, self.get_linear_velocity(), inventory)
-	# TODO apply damage to inventory
+	inventory.take_damage(damage)
 	body.on_hit_raft()
 	if hook_instance != null and hook_instance.caught_item == body:
-		print("caught item hit raft")
 		self.release_hook()
 
 func interact_hook():

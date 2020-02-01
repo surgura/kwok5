@@ -1,6 +1,6 @@
 extends Control
 
-const ICON_SIZE: int = 64
+const ICON_SIZE: int = 40
 const ITEMS_OFFSET: Vector2 = Vector2(16, 16)
 
 var item_map = {
@@ -12,10 +12,6 @@ var items = Array()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_item("ExampleItem")
-	add_item("ExampleItem")
-	add_item("ExampleItem")
-	#take_damage(31)
 	output()
 	
 func _process(delta):
@@ -25,7 +21,13 @@ func _process(delta):
 		items[i].position.y = screen_size.y - ICON_SIZE/2 - int(ITEMS_OFFSET.y) - bottom_offset
 		items[i].position.x = int(ITEMS_OFFSET.x) + ICON_SIZE/2
 		bottom_offset += ICON_SIZE
-		#region_rect.size.y = 32
+		items[i].region_enabled = true
+		var base_size = ICON_SIZE / items[i].scale.x
+		var dur_scale = items[i].durability_current / items[i].durability_maximum
+		items[i].offset.y = base_size * (1-dur_scale)/2
+		items[i].region_rect.position.y = base_size * (1-dur_scale)
+		items[i].region_rect.size.x = base_size
+		items[i].region_rect.size.y = base_size * dur_scale
 
 # Reduces durability
 func take_damage(damage: float):
@@ -35,7 +37,7 @@ func take_damage(damage: float):
 		
 	head.take_damage(damage)
 	if (head.durability_current <= 0):
-		remove_item(head.item_name, head.quantity)
+		remove_item(head.item_name)
 
 # Adds item to inventory
 func add_item(item_name: String) -> Object:
@@ -55,7 +57,7 @@ func find_item(item_name: String) -> Object:
 	return null
 
 # Removes item with given item_name, quantity: number of items to remove
-func remove_item(item_name: String, quantity: int) -> bool:
+func remove_item(item_name: String) -> bool:
 	var item_instance = find_item(item_name)
 	if (item_instance == null):
 		return false

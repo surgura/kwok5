@@ -3,7 +3,7 @@
 [ext_resource path="res://hook.gd" type="Script" id=1]
 [ext_resource path="res://images/hook.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 17.127
 
 [node name="hook" type="RigidBody2D"]
@@ -17,7 +17,7 @@ offset = Vector2( -10, 120 )
 
 [node name="shape_dummy" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 disabled = true
 
 [node name="catch_area" type="Area2D" parent="."]
@@ -25,5 +25,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="collision_shape" type="CollisionShape2D" parent="catch_area"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 [connection signal="body_shape_entered" from="catch_area" to="." method="_on_catch_area_body_shape_entered"]

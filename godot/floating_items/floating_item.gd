@@ -20,7 +20,7 @@ func get_weight_damage_factor(ship_weight : float) -> float:
 
 # Default impact speed damage factor.
 func get_speed_damage_factor(impact_speed : float) -> float:
-	return 1 + (impact_speed / 10)
+	return impact_speed / 250
 
 # Base damage.
 func get_base_damage():
