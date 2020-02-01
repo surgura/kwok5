@@ -1,14 +1,8 @@
 extends RigidBody2D
 
-var is_fixed : bool = true # Very heavy objects (e.g. rocks, or your mom) are fixed in place.
-var destroy_on_impact : bool = false
-export(bool) var is_being_reeled = false
-export(bool) var can_release_hook = false
-
-func _init(is_fixed : bool = true, destroy_on_impact : bool = false, can_release_hook : bool = true).():
-	self.is_fixed = is_fixed
-	self.destroy_on_impact = destroy_on_impact
-	self.can_release_hook = can_release_hook
+export(bool) var destroy_on_impact : bool = false
+export(bool) var can_release_hook : bool = false
+export(bool) var is_being_reeled : bool = false
 
 # The damage this item deals to the raft.
 func get_damage(ship_weight : float, ship_velocity : Vector2, inventory : Object) -> float:

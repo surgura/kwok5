@@ -36,6 +36,7 @@ func interact_hook():
 func throw_hook():
 	hook_instance = hook_scene.instance()
 	hook_instance.raft_path = self.get_path()
+	hook_instance.global_transform.origin = self.global_transform.origin
 	get_node("../").add_child(hook_instance)
 
 func release_hook():
