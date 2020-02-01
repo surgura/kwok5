@@ -3,16 +3,19 @@ extends RigidBody2D
 var is_fixed : bool = true # Very heavy objects (e.g. rocks, or your mom) are fixed in place.
 var destroy_on_impact : bool = false
 export(bool) var is_being_reeled = false
+export(bool) var can_release_hook = false
 
-func _ready():
-	pass
+func _init(is_fixed : bool = true, destroy_on_impact : bool = false, can_release_hook : bool = true).():
+	self.is_fixed = is_fixed
+	self.destroy_on_impact = destroy_on_impact
+	self.can_release_hook = can_release_hook
 
 # The damage this item deals to the raft.
-func get_damage(ship_weight, ship_velocity : Vector2, inventory_items : Array) -> float:
+func get_damage(ship_weight : float, ship_velocity : Vector2, inventory_items : Array) -> float:
 	return get_weight_damage_factor(ship_weight) * get_speed_damage_factor((ship_velocity - get_linear_velocity()).length()) * get_base_damage()
 
 # Default weight damage factor. Function starting at 1 with asymptote at 2.
-func get_weight_damage_factor(ship_weight) -> float:
+func get_weight_damage_factor(ship_weight : float) -> float:
 	return 1 + (1 - exp(-ship_weight))
 
 # Default impact speed damage factor.
