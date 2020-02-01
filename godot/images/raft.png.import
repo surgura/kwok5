@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/raft.png-6ee4b020777bf0e90c9d5b07a50c04a5.stex"
+path="res://.import/raft.png-5677d2f204f3d2e37353ecbf09455acf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raft.png"
-dest_files=[ "res://.import/raft.png-6ee4b020777bf0e90c9d5b07a50c04a5.stex" ]
+source_file="res://images/raft.png"
+dest_files=[ "res://.import/raft.png-5677d2f204f3d2e37353ecbf09455acf.stex" ]
 
 [params]
 
