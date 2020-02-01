@@ -1,39 +1,46 @@
 extends Node2D
 
-var items = Array()
+var ExampleItemScene = preload("res://inventory/scenes/ExampleItemScene.tscn")
 
-const item_scene = preload("res://inventory/scenes/ItemScene.tscn")
+
+var items = Array() 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	addItem("ITEMNAMESTUFF")
-	addItem("ITEMNAMESTUFF2")
-	print(findItem("ITEMNAMESTUFF"))
-	print(findItem("ITEMNAMESTUFF2"))
-	print(removeItem("ITEMNAMESTUFF2"))
-	print("--")
+func _ready():	
+	#addItem("ExampleItem")
+	#addItem("ITEMNAMESTUFF2")
+	#print(findItem("dgsg"))
+	#print(findItem("exampleitem"))
+	#print(removeItem("ExampleItem"))
+	#print("--")
 	outputInventoryToConsole()
 
 func addItem(itemName):
-	var item_instance = item_scene.instance()
-	item_instance.item_name = itemName
-	get_node("../").add_child(item_instance)
-	items.append(item_instance)
-	print("added ", item_instance.weight)
+	var itemInstance = null
+	match itemName:
+		"ExampleItem":
+			itemInstance = ExampleItemScene.instance()
+			items.push_front(itemInstance)
+			self.add_child(itemInstance)
+		_:
+			print("Item (" + itemName + ") not found")
+	return itemInstance
+
 
 func findItem(itemName):
 	for i in range(0, items.size()):
-		if (items[i].item_name == itemName):
+		if (items[i].Name == itemName):
 			return items[i]
 	return null
 
 func removeItem(itemName):
-	var item_instance = findItem(itemName)
-	if (item_instance == null):
+	var itemInstance = findItem(itemName)
+	if (itemInstance == null):
 		return false
 	else:
-		items.erase(item_instance)
-		print("removed ", item_instance)
+		items.erase(itemInstance)
+		itemInstance.queue_free()
+		print("removed ", itemInstance)
 		return true
 
 func getTotalWeight():
@@ -44,7 +51,7 @@ func getTotalWeight():
 
 func outputInventoryToConsole():
 	for i in range(0, items.size()):
-		print(str(i) + " " + items[i].item_name)
+		print(str(i) + " " + items[i].Name)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

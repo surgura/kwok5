@@ -1,23 +1,34 @@
 extends Node2D
 
-var item_name = "itemname"
-var current_durability = 10 #variable
-var maximum_durability = 10 #const?
+class_name ItemModel
 
-var isDestructible = true
+var Name: String
+var DurabilityCurrent: int
+var DurabilityMaximum: int
+var Weight: int
+var Quantity: int
 
-var weight = 10 #const?
+var IsDestructible: bool
 
-func set_durability(newDurabilityValue):
-	if (isDestructible):
-		current_durability = clamp(newDurabilityValue, 0, maximum_durability)
+func setDurability(newDurabilityValue):
+	if (IsDestructible):
+		DurabilityCurrent = clamp(newDurabilityValue, 0, DurabilityMaximum)
 		return true
 	else:
 		return false
 
+func init(name: String, durability: int, weight: int, isDestructible: bool, quantity: int):
+	Name = name
+	DurabilityCurrent = durability
+	DurabilityMaximum = durability
+	Weight = weight
+	IsDestructible = isDestructible
+	Quantity = quantity 
+	print(Name, DurabilityCurrent, DurabilityMaximum, Weight, IsDestructible, Quantity)
+	
 
 func _ready():
 	pass 
 
-func TakeDamage(amount):
+func _process(delta):
 	pass
