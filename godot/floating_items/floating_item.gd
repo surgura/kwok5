@@ -10,6 +10,12 @@ export(DestroyTrigger) var destroy_trigger = DestroyTrigger.IMPACT
 export(bool) var can_release_hook : bool = false
 export(bool) var is_being_reeled : bool = false
 
+func _init():
+	self.z_as_relative = false
+
+func _process(_delta):
+	self.z_index = self.global_position.y
+
 # The damage this item deals to the raft.
 func get_damage(ship_weight : float, ship_velocity : Vector2, inventory : Object) -> float:
 	return get_weight_damage_factor(ship_weight) * get_speed_damage_factor((ship_velocity - get_linear_velocity()).length()) * get_base_damage()

@@ -5,8 +5,8 @@
 [ext_resource path="res://character.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://character.gd" type="Script" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 24.0
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( -50, 0, 0, -20, 50, 0, 0, 20 )
 
 [node name="raft" type="RigidBody2D"]
 mode = 2
@@ -26,8 +26,6 @@ offset = Vector2( -120, -120 )
 script = ExtResource( 4 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-visible = false
-scale = Vector2( 1.75, 1 )
 shape = SubResource( 1 )
 
 [node name="fishline_begin" type="Position2D" parent="."]

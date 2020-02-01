@@ -7,10 +7,10 @@ var Wave = preload("res://wave.tscn")
 const numColumns = 5
 const numRows = 10
 
-const waveDistanceX = 110
+const waveDistanceX = 100
 const waveDistanceY = 40
 
-const waveAmplitude = 20
+const waveAmplitude = 30
 
 var noiseScaleX = 1
 var noiseScaleY = 1
@@ -35,17 +35,14 @@ func _ready():
 		for y in range(numRows):
 			waves[x].append(Wave.instance())
 			self.add_child(waves[x][y])
-			waves[x][y].set_z_index(y)
-			waves[x][y].setup(random)
 			
 			var pos = Vector2(x * waveDistanceX, y * waveDistanceY)
 			if y % 2 == 0:
 				pos.x += 0.5 * waveDistanceX
 			
 			waves[x][y].basePosition = pos
-	
-	#for x in range(numColumns):
-#		for y in range(numRows):
+			
+			waves[x][y].setup(random)
 
 
 func _process(delta):

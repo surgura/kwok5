@@ -10,8 +10,6 @@ var is_releasing = false
 var caught_item = null
 
 func _ready():
-	z_as_relative = true
-	z_index = 1
 	apply_central_impulse((get_global_mouse_position() - self.global_position).normalized() * throw_force)
 
 func _process(_delta):

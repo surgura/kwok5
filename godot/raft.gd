@@ -15,6 +15,8 @@ func _process(_delta):
 		get_node("fishline_begin").transform.origin = character.get_rod_position()
 	else:
 		character.look_towards(self.get_global_mouse_position())
+	
+	self.z_index = self.global_position.y
 
 func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	var inventory = get_node(inventory_path)
