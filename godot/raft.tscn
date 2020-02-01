@@ -8,7 +8,6 @@ radius = 68.3399
 
 [node name="raft" type="RigidBody2D"]
 mode = 2
-mass = 10.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )

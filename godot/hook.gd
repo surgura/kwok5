@@ -23,3 +23,11 @@ func _on_catch_area_body_shape_entered(body_id, body, body_shape, area_shape):
 	# remove all children of this node. we will just execute script now
 	for child in get_children():
 		child.queue_free()
+		
+func can_release():
+	return caught_item == null or caught_item.can_release_hook
+	
+func release():
+	if caught_item != null:
+		caught_item.is_being_reeled = false
+		caught_item = null

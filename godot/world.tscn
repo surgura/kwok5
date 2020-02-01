@@ -15,3 +15,5 @@ position = Vector2( 159.266, 151.209 )
 
 [node name="camera" type="Camera2D" parent="raft"]
 current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false

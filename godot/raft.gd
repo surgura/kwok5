@@ -20,13 +20,17 @@ func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	#var damage = body.get_damage(self.mass, self.get_linear_velocity(), inventory)
 	# TODO apply damage to inventory
 	body.on_hit_raft()
-	self.release_hook()
+	if hook_instance != null and hook_instance.caught_item == body:
+		print("asdsa")
+		self.release_hook()
+	else:
+		print("xxx")
 
 func interact_hook():
 	if hook_instance == null:
 		throw_hook()
 	else:
-		if hook_instance.can_release_hook:
+		if hook_instance.can_release():
 			release_hook()
 
 func throw_hook():
@@ -35,5 +39,7 @@ func throw_hook():
 	get_node("../").add_child(hook_instance)
 
 func release_hook():
-	hook_instance.queue_free()
-	hook_instance = null
+	if hook_instance != null:
+		hook_instance.release()
+		hook_instance.queue_free()
+		hook_instance = null
