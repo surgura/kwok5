@@ -11,7 +11,7 @@ var quantity: int
 var is_destructible: bool
 var priority: int
 
-const ICON_SIZE: int = 32
+const ICON_SIZE: int = 64
 
 # Decreases durability
 # Returns excessive damage

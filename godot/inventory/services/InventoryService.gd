@@ -1,7 +1,7 @@
 extends Control
 
-const ICON_SIZE: int = 32
-const ITEMS_OFFSET: Vector2 = Vector2(32, 32)
+const ICON_SIZE: int = 64
+const ITEMS_OFFSET: Vector2 = Vector2(16, 16)
 
 var item_map = {
 	"ExampleItem": preload("res://inventory/scenes/ExampleItemScene.tscn"),
@@ -17,6 +17,15 @@ func _ready():
 	add_item("ExampleItem")
 	#take_damage(31)
 	output()
+	
+func _process(delta):
+	var screen_size: Vector2 = get_viewport().size
+	var bottom_offset: int = 0
+	for i in range(len(items)-1, -1, -1):
+		items[i].position.y = screen_size.y - ICON_SIZE/2 - int(ITEMS_OFFSET.y) - bottom_offset
+		items[i].position.x = int(ITEMS_OFFSET.x) + ICON_SIZE/2
+		bottom_offset += ICON_SIZE
+		#region_rect.size.y = 32
 
 # Reduces durability
 func take_damage(damage: float):
@@ -96,10 +105,3 @@ func output():
 		+ "\nDURABILITY: " + str(items[i].durability_current)
 		+ "\nQUANTITY:   " + str(items[i].quantity)
 		)
-		
-func _draw():
-	var screen_size: Vector2 = get_viewport().size
-	var bottom_offset: int = 0
-	for item in items:
-		item.position.y = screen_size.y - ICON_SIZE/2 - int(ITEMS_OFFSET.y) - bottom_offset
-		item.position.x = int(ITEMS_OFFSET.x) + ICON_SIZE/2
