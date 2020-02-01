@@ -1,14 +1,14 @@
 extends RigidBody2D
 
-var is_fixed : bool = true # Very heavy objects (e.g. rocks, or your mom) are fixed in place.
-var destroy_on_impact : bool = false
-export(bool) var is_being_reeled = false
-export(bool) var can_release_hook = false
+enum DestroyTrigger {
+	IMPACT,
+	CATCH,
+	NEVER	
+}
 
-func _init(is_fixed : bool = true, destroy_on_impact : bool = false, can_release_hook : bool = true).():
-	self.is_fixed = is_fixed
-	self.destroy_on_impact = destroy_on_impact
-	self.can_release_hook = can_release_hook
+export(DestroyTrigger) var destroy_trigger = DestroyTrigger.IMPACT
+export(bool) var can_release_hook : bool = false
+export(bool) var is_being_reeled : bool = false
 
 # The damage this item deals to the raft.
 func get_damage(ship_weight : float, ship_velocity : Vector2, inventory : Object) -> float:
@@ -28,17 +28,17 @@ func get_base_damage():
 
 # What should happen when the item collides with the raft.
 func on_hit_raft() -> void:
-	if (destroy_on_impact):
+	if destroy_trigger == DestroyTrigger.IMPACT or (destroy_trigger == DestroyTrigger.CATCH and is_being_reeled):
 		self.queue_free()
 	
 # Returns an inventory item or null.
 func maybe_get_item(inventory : Object):
-#	if (!can_pickup(inventory_items)):
-#		return null
+	if (!can_pickup(inventory)):
+		return null
 	
 	return get_item()
 
-func can_pickup(inventory_items: Array) -> bool:
+func can_pickup(inventory : Object) -> bool:
 	return false
 
 func get_item():

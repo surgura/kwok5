@@ -1,6 +1,7 @@
 extends "res://floating_items/floating_item.gd"
 
-#TODO: Set weight in scene.
+func can_pickup(inventory : Object) -> bool:
+	return true
 
-func _init().(false, true):
-	pass
+func get_item():
+	return "wooden_plank"
