@@ -1,6 +1,8 @@
 extends Node2D
 
 export(float) var weather = 1
+export(int) var chunkX
+export(int) var chunkY
 
 var Wave = preload("res://wave.tscn")
 
