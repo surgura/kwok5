@@ -4,7 +4,7 @@
 [ext_resource path="res://rock.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.8987
+radius = 22.9501
 
 [node name="rock" type="RigidBody2D"]
 collision_layer = 3
@@ -14,7 +14,8 @@ script = ExtResource( 1 )
 can_release_hook = true
 
 [node name="sprite" type="Sprite" parent="."]
-scale = Vector2( 0.153076, 0.153076 )
+position = Vector2( -0.397217, -3.17773 )
+scale = Vector2( 0.23513, 0.23513 )
 texture = ExtResource( 2 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
