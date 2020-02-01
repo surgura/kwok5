@@ -26,7 +26,6 @@ func init(name: String, durability: int, weight: int, isDestructible: bool, quan
 	Quantity = quantity 
 	print(Name, DurabilityCurrent, DurabilityMaximum, Weight, IsDestructible, Quantity)
 	
-
 func _ready():
 	pass 
 

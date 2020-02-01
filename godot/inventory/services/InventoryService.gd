@@ -10,6 +10,7 @@ func _ready():
 	addItem("ExampleItem")
 	addItem("ExampleItem")
 	addItem("ExampleItem")
+	removeItem("ExampleItem", 3)
 	#addItem("ITEMNAMESTUFF2")
 	#print(findItem("dgsg"))
 	#print(findItem("exampleitem"))
@@ -41,15 +42,22 @@ func findItem(itemName):
 			return items[i]
 	return null
 
-func removeItem(itemName):
+func removeItem(itemName, quantity):
 	var itemInstance = findItem(itemName)
 	if (itemInstance == null):
 		return false
 	else:
-		items.erase(itemInstance)
-		itemInstance.queue_free()
-		print("removed ", itemInstance)
-		return true
+		if (quantity > itemInstance.Quantity):
+			return false
+		else:
+			itemInstance.Quantity -= quantity
+			if (itemInstance.Quantity == 0):
+				items.erase(itemInstance)
+				itemInstance.queue_free()
+				print("removed " + itemInstance.Name)
+			else:
+				print("removed " + str(itemInstance.Quantity) + itemInstance.Name)
+			return true
 
 func getTotalWeight():
 	var totalWeight = 0
