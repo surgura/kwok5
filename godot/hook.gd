@@ -32,7 +32,7 @@ func _on_catch_area_body_shape_entered(_body_id, body, _body_shape, _area_shape)
 	print("asdasd")
 	caught_item = body
 	caught_item.is_being_reeled = true
-    # remove all children of this node. we will just execute script now
+	# remove all children of this node. we will just execute script now
 	for child in get_children():
 		child.queue_free()
 		
