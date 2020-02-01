@@ -1,6 +1,9 @@
 extends Control
 
-var ExampleItemScene = preload("res://inventory/scenes/ExampleItemScene.tscn")
+var item_map = {
+	"ExampleItem": preload("res://inventory/scenes/ExampleItemScene.tscn"),
+	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn")
+}
 
 var items = Array() 
 
@@ -27,11 +30,10 @@ func take_damage(damage: float):
 # Adds item to inventory
 func add_item(item_name: String) -> Object:
 	var item_instance = null
-	match item_name:
-		"ExampleItem":
-			_custom_add_item(ExampleItemScene.instance())
-		_:
-			print("Item (" + item_name + ") not found")
+	if item_map.has(item_name):
+		item_instance = _custom_add_item(item_map[item_name].instance())
+	else:
+		print("Item (" + item_name + ") not found")
 	redraw_items()
 	return item_instance
 
