@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IMPACT_Brick_vs_Hard_Ground_RR3_mono.wav-02388778bed80fb1d233c3ee2bc4868b.sample"
+
+[deps]
+
+source_file="res://music/IMPACT_Brick_vs_Hard_Ground_RR3_mono.wav"
+dest_files=[ "res://.import/IMPACT_Brick_vs_Hard_Ground_RR3_mono.wav-02388778bed80fb1d233c3ee2bc4868b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
