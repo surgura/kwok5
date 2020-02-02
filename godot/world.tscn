@@ -96,6 +96,7 @@ position = Vector2( -256.066, -323.58 )
 inventory_path = NodePath("../../gui/inventory")
 tiersystem_path = NodePath("../../tiersystem")
 textbox_path = NodePath("../../gui/textbox")
+ship_path = NodePath("../mothership")
 
 [node name="gui" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -120,7 +121,7 @@ world = NodePath("../../world")
 [node name="intro" parent="gui" instance=ExtResource( 12 )]
 position = Vector2( 511, 334 )
 scale = Vector2( 0.51, 0.51 )
-frame = 77
+frame = 97
 
 [node name="mainMenu" parent="gui" instance=ExtResource( 13 )]
 margin_left = -26.0

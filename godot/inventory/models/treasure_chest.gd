@@ -1,4 +1,4 @@
 extends ItemModel
 
 func _init():
-	.init("treasure_chest", 50, 10, true, 10)
+	.init("wooden_plank", 50, 10, true, 10)
