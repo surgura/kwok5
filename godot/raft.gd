@@ -16,7 +16,7 @@ func _process(_delta):
 	else:
 		character.look_towards(self.get_global_mouse_position())
 	
-	self.z_index = self.global_position.y
+	self.z_index = self.global_position.y / 10.0
 
 func _on_raft_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	var inventory = get_node(inventory_path)
