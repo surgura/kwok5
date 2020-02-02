@@ -17,7 +17,7 @@ func _init():
 	self.z_as_relative = false
 
 func _process(_delta):
-	self.z_index = self.global_position.y
+	self.z_index = self.global_position.y / 10.0
 
 # The damage this item deals to the raft.
 func get_damage(ship_weight : float, ship_velocity : Vector2, inventory : Object) -> float:

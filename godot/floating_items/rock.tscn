@@ -20,9 +20,9 @@ base_damage = 1.0
 position = Vector2( -1.19165, 13.5053 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
-offset = Vector2( 0, 32 )
+offset = Vector2( 0, 136 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-position = Vector2( 2.38327, -15.0942 )
+position = Vector2( 2.383, 24 )
 scale = Vector2( 1.75, 1.75 )
 shape = SubResource( 1 )
