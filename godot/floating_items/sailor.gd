@@ -14,7 +14,7 @@ var convs = [
 	{
 		"enter": [
 			{
-				"text": "Sailor: …What happened? All I can remember are the tentacles… Last time I saw those was when I was watching that hent… never mind.",
+				"text": "Sailor: …What happened? All I can remember are the tentacles… Last time I saw those was when I was watching that h… never mind.",
 				"img": tex_sailor
 			},
 			{
@@ -119,7 +119,7 @@ var convs = [
 			"img": tex_sailor
 		},
 		"tierup": {
-			"text": "Hmmm! This global game jam is delicious. Time to set sail matey!",
+			"text": "Hmmm! This global game jam is delicious. But that pineapple tasted a little bit spongy. Anyway, time to set sail matey!",
 			"img": tex_sailor
 		}
 	}
