@@ -12,6 +12,9 @@ var items = Array()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_item("ExampleItem")
+	add_item("ExampleItem")
+	add_item("ExampleItem")
 	output()
 	
 func _process(delta):
@@ -86,10 +89,10 @@ func sort():
 	pass
 	
 func priorityComparison(a, b):
-    if typeof(a) != typeof(b):
-        return typeof(a) < typeof(b)
-    else:
-        return a.priority < b.priority
+	if typeof(a) != typeof(b):
+		return typeof(a) < typeof(b)
+	else:
+		return a.priority < b.priority
 		
 # Gets total weight of items
 func get_total_weight() -> int:
@@ -104,6 +107,10 @@ func get_total_durability() -> int:
 	for i in range(0, items.size()):
 		total_durability += items[i].current_durability
 	return total_durability
+
+# Gets number of items in inventory
+func get_item_size() -> int:
+	return items.size()
 
 # Debug stuff
 func output():
