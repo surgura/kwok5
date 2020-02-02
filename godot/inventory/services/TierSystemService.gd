@@ -30,14 +30,15 @@ func update_current_tier(new_tier_value: int):
 # Deliver items
 # Goes over your inventory and matches the requirements
 # Automatically removes everything you have if the requirements are met
-func deliver(inventory: Object):
+func deliver(inventory: Object) -> int:
 	var required_items = find_required_items(current_tier)
 	if (required_items.empty() || required_items == null):
 		print("Tier does not exist!")
-		return false
+		return -1 # Tier does not exist
 	else:
+		var inventory_count_prev = inventory.get_item_count()
 		var dict_key_array = Array(required_items.keys())
-		var dict_values_array = Array(required_items.values())
+		#var dict_values_array = Array(required_items.values())
 		
 		# Loop over all keys
 		for i in range(0, dict_key_array.size()):
@@ -62,7 +63,11 @@ func deliver(inventory: Object):
 		if (required_items.size() == 0):
 			update_current_tier(current_tier + 1)
 			print("Next Tier!! :D  ", current_tier)
-		return required_items.size() == 0
+			return 3 # Next tier! Gratz!
+		elif (inventory_count_prev != required_items.size()):
+			return 1 # Partially delivered
+		else:
+			return 2 # Nothing delivered
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
