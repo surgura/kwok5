@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://playButton.gd" type="Script" id=2]
-[ext_resource path="res://images/paper.png" type="Texture" id=3]
-[ext_resource path="res://fonts/mainMenuFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/paper.png" type="Texture" id=2]
+[ext_resource path="res://fonts/mainMenuFont.tres" type="DynamicFont" id=3]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -19,7 +18,6 @@ margin_left = 735.945
 margin_top = 376.502
 margin_right = 882.945
 margin_bottom = 491.502
-script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="playButton"]
 visible = false
@@ -28,14 +26,14 @@ margin_top = 3.0
 margin_right = 1983.0
 margin_bottom = 1471.0
 rect_scale = Vector2( 0.09, 0.05 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="text" type="RichTextLabel" parent="playButton"]
 margin_left = -32.738
 margin_top = 19.0394
 margin_right = 118.262
 margin_bottom = 77.0394
-custom_fonts/normal_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/selection_color = Color( 0.694118, 0.152941, 0.152941, 1 )
 text = "PLAY"

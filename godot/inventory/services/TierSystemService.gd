@@ -4,7 +4,7 @@ var current_tier = 1
 var maximum_tier = 2
 
 var requirements_map = {
-	1: { "ExampleItem": 2, "wooden_plank": 1},
+	1: { "wooden_plank": 2},
 	2: { "wooden_plank": 2}
 }
 
@@ -36,7 +36,7 @@ func deliver(inventory: Object) -> int:
 		print("Tier does not exist!")
 		return -1 # Tier does not exist
 	else:
-		var inventory_count_prev = inventory.get_item_count()
+		var inventory_count_prev = inventory.get_item_size()
 		var dict_key_array = Array(required_items.keys())
 		#var dict_values_array = Array(required_items.values())
 		
@@ -50,21 +50,22 @@ func deliver(inventory: Object) -> int:
 				# Remove the items in your inventory.. one by one basically
 				var items_count = inventory.get_item_count(found_item.item_name)
 				var required_number_of_resources = required_items[dict_key_array[i]]
-				while (required_number_of_resources <= items_count):
+				while (items_count >= required_number_of_resources):
 					inventory.remove_item(found_item.item_name)
+					items_count = inventory.get_item_count(found_item.item_name)
 					# Remove requirements one by one from the tiersystem if player has enough resources
 					required_items[dict_key_array[i]] -= 1
 					if (required_items[dict_key_array[i]] <= 0):
 						required_items.erase(dict_key_array[i])
 						print("[RewardsDelivery] Removed  " + dict_key_array[i])
 						break
-		#print("---")
-		#inventory.output()
+		print("--- inven after:")
+		inventory.output()
 		if (required_items.size() == 0):
 			update_current_tier(current_tier + 1)
 			print("Next Tier!! :D  ", current_tier)
 			return 3 # Next tier! Gratz!
-		elif (inventory_count_prev != required_items.size()):
+		elif (inventory_count_prev != inventory.get_item_size()):
 			return 1 # Partially delivered
 		else:
 			return 2 # Nothing delivered
