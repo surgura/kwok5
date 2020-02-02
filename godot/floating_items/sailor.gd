@@ -107,6 +107,8 @@ func deliver():
 	var tiersystem = get_node(tiersystem_path)
 	var tier_index = tiersystem.get_current_tier()-1
 	var textbox = get_node(textbox_path)
+	inventory.output()
+	
 	var result = tiersystem.deliver(inventory)
 	if result == 3: # tierup
 		state = "start_tier"
