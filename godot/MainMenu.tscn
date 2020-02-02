@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://playButton.gd" type="Script" id=2]
+[ext_resource path="res://images/paper.png" type="Texture" id=3]
+[ext_resource path="res://fonts/mainMenuFont.tres" type="DynamicFont" id=4]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="playButton" type="Control" parent="."]
+margin_left = 692.683
+margin_top = 387.093
+margin_right = 829.683
+margin_bottom = 492.093
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="playButton"]
+visible = false
+margin_left = -64.52
+margin_top = 3.04883
+margin_right = 1983.48
+margin_bottom = 1471.05
+rect_scale = Vector2( 0.11, 0.07 )
+texture = ExtResource( 3 )
+
+[node name="text" type="RichTextLabel" parent="playButton"]
+margin_left = -15.5599
+margin_top = 32.4002
+margin_right = 135.44
+margin_bottom = 90.4002
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0.694118, 0.152941, 0.152941, 1 )
+text = "PLAY"
+scroll_active = false
+
+[node name="button" type="Button" parent="playButton"]
+margin_left = -38.0
+margin_top = 13.0
+margin_right = 148.0
+margin_bottom = 94.0
+focus_mode = 0
+flat = true
+[connection signal="mouse_entered" from="playButton/button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="playButton/button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="playButton/button" to="." method="_on_button_pressed"]

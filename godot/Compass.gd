@@ -1,7 +1,7 @@
 extends Control
 
-export(NodePath) var ship
 export(NodePath) var player
+export(NodePath) var ship
 
 
 
@@ -22,7 +22,6 @@ func _process(delta):
 		
 		var shipPos = get_node(ship).get_global_position()
 		var playerPos = get_node(player).get_global_position()
-		var diff = shipPos - playerPos
-		print(diff.angle())
+		var diff = playerPos - shipPos
 		get_node("needle").set_rotation(diff.angle() - 0.5 * PI)
 	
