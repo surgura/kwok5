@@ -8,13 +8,6 @@ var item_map = {
 }
 
 var items = Array() 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	add_item("ExampleItem")
-	add_item("ExampleItem")
-	add_item("ExampleItem")
-	output()
 	
 func _process(delta):
 	var screen_size: Vector2 = get_viewport().size
