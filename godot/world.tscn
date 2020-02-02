@@ -85,6 +85,9 @@ position = Vector2( 1268.06, -338.503 )
 [node name="rock10" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 1448.94, -341.733 )
 
+[node name="rock74" parent="world" instance=ExtResource( 3 )]
+position = Vector2( 2875.66, -1029.22 )
+
 [node name="wooden_plank6" parent="world" instance=ExtResource( 5 )]
 position = Vector2( 193.887, -418.254 )
 
@@ -426,8 +429,11 @@ position = Vector2( 2664.14, 1438.07 )
 [node name="rock48" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 1686.01, 1809.87 )
 
+[node name="rock75" parent="world" instance=ExtResource( 3 )]
+position = Vector2( 1272.04, 1617.67 )
+
 [node name="rock49" parent="world" instance=ExtResource( 3 )]
-position = Vector2( 3670.86, 1746.95 )
+position = Vector2( 3523.01, 1562.14 )
 
 [node name="rock50" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 792.028, 982.705 )
@@ -475,7 +481,13 @@ position = Vector2( 2470.45, -1650.29 )
 position = Vector2( 1021.76, -949.32 )
 
 [node name="rock59" parent="world" instance=ExtResource( 3 )]
-position = Vector2( 309.405, -1319.2 )
+position = Vector2( 359.756, -1239.7 )
+
+[node name="rock73" parent="world" instance=ExtResource( 3 )]
+position = Vector2( 356.151, -868.378 )
+
+[node name="rock72" parent="world" instance=ExtResource( 3 )]
+position = Vector2( -114.602, -1213.2 )
 
 [node name="shark35" parent="world" instance=ExtResource( 6 )]
 position = Vector2( -1458.63, -1115.69 )
@@ -504,8 +516,14 @@ position = Vector2( -894.547, -1103.01 )
 [node name="rock63" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -1477.64, -1800.19 )
 
+[node name="rock78" parent="world" instance=ExtResource( 3 )]
+position = Vector2( -1174.56, -1585.81 )
+
 [node name="rock64" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -2428.34, 703.309 )
+
+[node name="rock76" parent="world" instance=ExtResource( 3 )]
+position = Vector2( -2088.29, 1102.49 )
 
 [node name="rock65" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 1412.47, 443.453 )
@@ -515,6 +533,9 @@ position = Vector2( 835.719, 418.101 )
 
 [node name="rock67" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -19.9075, 1153.31 )
+
+[node name="rock77" parent="world" instance=ExtResource( 3 )]
+position = Vector2( 98.3696, 724.555 )
 
 [node name="rock68" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -1452.29, -31.895 )
