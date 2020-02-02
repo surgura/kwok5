@@ -11,9 +11,9 @@ func show_stuff(text: String, tex: Texture):
 	
 func hide():
 	visible = false
-	
-func _process(_delta):
-	if Input.is_action_just_pressed("test"):
+
+
+func _on_Button_button_down():
 		hide()
 		get_tree().paused = false
 		emit_signal("on_close")
