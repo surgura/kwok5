@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name ItemModel
+class_name item
 
 export(String) var item_name: String
 var durability_current: float
