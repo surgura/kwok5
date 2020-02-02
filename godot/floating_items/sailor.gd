@@ -6,6 +6,8 @@ export(NodePath) var textbox_path: NodePath
 
 const tex_sailor = preload("res://images/character01.png")
 
+var start_timer
+
 var convs = [
 	{
 		"enter": [
@@ -70,7 +72,15 @@ var conv_index
 
 func _ready():
 	set_state_start_tier()
-	#on_hit_raft()
+	start_timer = Timer.new()
+	start_timer.connect("timeout", self, "startstuff")
+	add_child(start_timer)
+	start_timer.set_wait_time(0.5)
+	start_timer.start()
+	
+func startstuff():
+	start_timer.stop()
+	on_hit_raft()
 
 func set_state_start_tier():
 	state = "start_tier"
