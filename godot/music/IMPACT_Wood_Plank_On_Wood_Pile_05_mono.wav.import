@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IMPACT_Wood_Plank_On_Wood_Pile_05_mono.wav-3b0777d2ee0ce2a5c93d437e3ac1fcd8.sample"
+
+[deps]
+
+source_file="res://music/IMPACT_Wood_Plank_On_Wood_Pile_05_mono.wav"
+dest_files=[ "res://.import/IMPACT_Wood_Plank_On_Wood_Pile_05_mono.wav-3b0777d2ee0ce2a5c93d437e3ac1fcd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
