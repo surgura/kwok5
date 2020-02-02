@@ -50,9 +50,8 @@ func deliver(inventory: Object) -> int:
 				# Remove the items in your inventory.. one by one basically
 				var items_count = inventory.get_item_count(found_item.item_name)
 				var required_number_of_resources = required_items[dict_key_array[i]]
-				while (items_count >= required_number_of_resources):
+				for j in range(0, items_count):
 					inventory.remove_item(found_item.item_name)
-					items_count = inventory.get_item_count(found_item.item_name)
 					# Remove requirements one by one from the tiersystem if player has enough resources
 					required_items[dict_key_array[i]] -= 1
 					if (required_items[dict_key_array[i]] <= 0):
