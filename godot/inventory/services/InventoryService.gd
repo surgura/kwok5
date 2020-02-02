@@ -7,9 +7,9 @@ var item_map = {
 	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn"),
 	"treasure_chest": preload("res://inventory/scenes/treasure_chest.tscn"),
 	"cloth": preload("res://inventory/scenes/cloth.tscn"),
+	"pineapple": preload("res://inventory/scenes/pineapple.tscn"),
 	"diamond": preload("res://inventory/scenes/diamond.tscn"),
-	"global_game_jam": preload("res://inventory/scenes/global_game_jam.tscn"),
-	"pineapple": preload("res://inventory/scenes/pineapple.tscn")
+	"global_game_jam": preload("res://inventory/scenes/global_game_jam.tscn")
 }
 
 var items = Array() 
