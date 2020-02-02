@@ -51,7 +51,7 @@ func get_rod_position():
 	return position
 
 func get_rod_start_position():
-	var position = self.rod_positions[0]
+	var position = Vector2(-1.0, 0.0)
 	if (self.flip_h):
 		position.x = -position.x
 	return position
