@@ -1,10 +1,9 @@
 extends Control
 
-const ICON_SIZE: int = 40
+const ICON_SIZE: int = 48
 const ITEMS_OFFSET: Vector2 = Vector2(16, 16)
 
 var item_map = {
-	"ExampleItem": preload("res://inventory/scenes/ExampleItemScene.tscn"),
 	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn")
 }
 
@@ -21,13 +20,24 @@ func _process(delta):
 		items[i].position.y = screen_size.y - ICON_SIZE/2 - int(ITEMS_OFFSET.y) - bottom_offset
 		items[i].position.x = int(ITEMS_OFFSET.x) + ICON_SIZE/2
 		bottom_offset += ICON_SIZE
-		items[i].region_enabled = true
-		var base_size = ICON_SIZE / items[i].scale.x
+		
 		var dur_scale = items[i].durability_current / items[i].durability_maximum
-		items[i].offset.y = base_size * (1-dur_scale)/2
-		items[i].region_rect.position.y = base_size * (1-dur_scale)
-		items[i].region_rect.size.x = base_size
-		items[i].region_rect.size.y = base_size * dur_scale
+		
+		var image = items[i].get_node("image")
+		image.region_enabled = true
+		var base_size = ICON_SIZE / image.scale.x
+		image.offset.y = base_size * (1-dur_scale)/2
+		image.region_rect.position.y = base_size * (1-dur_scale)
+		image.region_rect.size.x = base_size
+		image.region_rect.size.y = base_size * dur_scale
+		
+		var background = items[i].get_node("background")
+		background.region_enabled = true
+		base_size = ICON_SIZE / background.scale.x
+		background.offset.y = base_size * (1-dur_scale)/2
+		background.region_rect.position.y = base_size * (1-dur_scale)
+		background.region_rect.size.x = base_size
+		background.region_rect.size.y = base_size * dur_scale
 
 # Reduces durability
 func take_damage(damage: float):

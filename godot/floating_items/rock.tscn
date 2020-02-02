@@ -13,6 +13,7 @@ mode = 1
 script = ExtResource( 1 )
 destroy_trigger = 2
 pickup_trigger = 2
+can_release_hook = true
 base_damage = 2.0
 
 [node name="sprite" type="Sprite" parent="."]
