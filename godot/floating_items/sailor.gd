@@ -87,14 +87,20 @@ func next_message():
 		textbox.disconnect("on_close", self, "next_message")
 		var base_text = convs[tier_index]["firsttimetask"]["text"]
 		state = "deliver"
-		textbox.show_stuff(base_text + req, convs[tier_index]["firsttimetask"]["img"])
+		textbox.show_stuff(base_text + "\n\n" + req, convs[tier_index]["firsttimetask"]["img"])
 	else:
 		textbox.connect("on_close", self, "next_message")
 		textbox.show_stuff(convs[tier_index]["enter"][conv_index]["text"], convs[tier_index]["enter"][conv_index]["img"])
 		conv_index += 1
 
 func requirement_list():
-	return "5 Wooden plank, 1 Steer"
+	var tiersystem = get_node(tiersystem_path)
+	var reqs = tiersystem.find_required_items(tiersystem.get_current_tier())
+	var res = ""
+	for req in reqs.keys():
+		res += "- " + str(reqs[req]) + " " + req.replace("_", " ") + "\n"
+		
+	return res
 
 func deliver():
 	var inventory = get_node(inventory_path)
@@ -109,11 +115,11 @@ func deliver():
 	elif result == 1: # partially
 		var req = requirement_list()
 		var base_text = convs[tier_index]["someloot"]["text"]
-		textbox.show_stuff(base_text + req, convs[tier_index]["someloot"]["img"])
+		textbox.show_stuff(base_text + "\n\n" + req, convs[tier_index]["someloot"]["img"])
 	elif result == 2: # nothing
 		var req = requirement_list()
 		var base_text = convs[tier_index]["noloot"]["text"]
-		textbox.show_stuff(base_text + req, convs[tier_index]["someloot"]["img"])
+		textbox.show_stuff(base_text + "\n\n" + req, convs[tier_index]["someloot"]["img"])
 	else:
 		print("ERRORORORRRRR IN TIER SYSTEMMMMM")
 
