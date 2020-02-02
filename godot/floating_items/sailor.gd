@@ -70,16 +70,24 @@ var convs = [
 	{
 		"enter": [
 			{
-				"text": "Looks like she's not quite keeping her head above the water. We need more stuff to fix this.",
+				"text": "Looks like she's not quite keeping her head above the water, but a little birdie just told me there's a treasure chest and diamonds floating around here…",
+				"img": tex_sailor
+			},
+			{
+				"text": "This is not the time to get greedy man…",
+				"img": tex_you
+			},
+			{
+				"text": "C'mon man. This is our one shot. Do not miss your chance to blow. This opportunity comes once in a lifetime yarr.",
 				"img": tex_sailor
 			}
 		],
 		"firsttimetask": {
-			"text": "Can you find me these materials:",
+			"text": "Get me dat bootey:",
 			"img": tex_sailor
 		},
 		"noloot": {
-			"text": "Stop bumping into me if you don't have what we need:",
+			"text": "Stop bumping into me if you don't have the bootey:",
 			"img": tex_sailor
 		},
 		"someloot": {
@@ -87,7 +95,7 @@ var convs = [
 			"img": tex_sailor
 		},
 		"tierup": {
-			"text": "Nice bro! I think she's almost waterproof!",
+			"text": "Nice bro! I'm gonna be rich! I mean we… We're gonna be rich.",
 			"img": tex_sailor
 		}
 	},

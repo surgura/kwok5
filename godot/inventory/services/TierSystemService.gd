@@ -4,8 +4,10 @@ var current_tier = 1
 var maximum_tier = 2
 
 var requirements_map = {
-	1: { "wooden_plank": 2},
-	2: { "wooden_plank": 2}
+	1: { "wooden_plank": 3 },
+	2: { "cloth": 2 },
+	3: { "treasure_chest": 1, "diamond": 3 },
+	4: { "global_game_jam": 1 }
 }
 
 # Given a tier, finds required requirements
