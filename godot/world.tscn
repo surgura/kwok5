@@ -5,8 +5,8 @@
 [ext_resource path="res://floating_items/wooden_plank.tscn" type="PackedScene" id=3]
 [ext_resource path="res://floating_items/shark.tscn" type="PackedScene" id=4]
 [ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://textbox.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Compass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Compass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://textbox.tscn" type="PackedScene" id=7]
 
 [node name="everything" type="Node2D"]
 
@@ -81,12 +81,16 @@ position = Vector2( 1553.7, -313.323 )
 
 [node name="inventory" parent="gui" instance=ExtResource( 5 )]
 
-[node name="textbox" parent="gui" instance=ExtResource( 6 )]
-
-[node name="compass" parent="gui" instance=ExtResource( 7 )]
+[node name="compass" parent="gui" instance=ExtResource( 6 )]
 margin_left = 939.922
 margin_top = 131.541
 margin_right = 979.922
 margin_bottom = 171.541
 ship = NodePath("../../world/rock")
 player = NodePath("../../world/raft")
+
+[node name="textbox" parent="gui" instance=ExtResource( 7 )]
+margin_left = 522.48
+margin_top = 297.375
+margin_right = 522.48
+margin_bottom = 297.375
