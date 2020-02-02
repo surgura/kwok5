@@ -1,11 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://inventory/models/treasure_chest.gd" type="Script" id=1]
+[ext_resource path="res://inventory/models/ItemModel.gd" type="Script" id=1]
 [ext_resource path="res://images/paper.png" type="Texture" id=2]
 [ext_resource path="res://images/plank01.png" type="Texture" id=3]
 
 [node name="item" type="Node2D"]
 script = ExtResource( 1 )
+item_name = "wooden_plank"
+durability_maximum = 5.0
+weight = 1
+is_destructible = true
+priority = 1
 
 [node name="background" type="Sprite" parent="."]
 texture = ExtResource( 2 )

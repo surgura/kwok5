@@ -2,13 +2,13 @@ extends Node2D
 
 class_name ItemModel
 
-var item_name: String
+export(String) var item_name: String
 var durability_current: float
-var durability_maximum: float
-var weight: int
+export(float) var durability_maximum: float
+export(int) var weight: int
 
-var is_destructible: bool
-var priority: int
+export(bool) var is_destructible: bool
+export(int) var priority: int
 
 const ICON_SIZE: int = 48
 
@@ -30,17 +30,8 @@ func set_durability(new_value: float) -> bool:
 	else:
 		return false
 
-func init(item_name: String, durability: float, weight: int, is_destructible: bool, priority: int):
-	self.item_name = item_name
-	self.durability_current = durability
-	self.durability_maximum = durability
-	self.weight = weight
-	self.is_destructible = is_destructible
-	
-	self.priority = priority
-	print(name, durability_current, weight, is_destructible, priority)
-
 func _ready():
+	self.durability_current = self.durability_maximum
 	var image = get_node("image")
 	var texsize = image.texture.get_size()
 	var scale: float = ICON_SIZE / max(texsize.x, texsize.y)

@@ -1,11 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://inventory/models/global_game_jam.gd" type="Script" id=1]
+[ext_resource path="res://inventory/models/ItemModel.gd" type="Script" id=1]
 [ext_resource path="res://images/paper.png" type="Texture" id=2]
 [ext_resource path="res://images/global_game_jam.png" type="Texture" id=3]
 
 [node name="item" type="Node2D"]
 script = ExtResource( 1 )
+item_name = "global_game_jam"
+durability_maximum = 3.0
+weight = 3
+is_destructible = true
+priority = 5
 
 [node name="background" type="Sprite" parent="."]
 texture = ExtResource( 2 )
