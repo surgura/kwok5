@@ -14,7 +14,7 @@ var introTimer = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	introTimer = Timer.new()
-	introTimer.set_wait_time(3)
+	introTimer.set_wait_time(5)
 	introTimer.connect("timeout", self, "_on_timer_timeout") 
 	add_child(introTimer)
 	get_node("world").hide()
@@ -30,6 +30,8 @@ func _ready():
 func _on_MainMenu_start_game():
 	introTimer.start()
 	get_node("gui/mainMenu").hide()
+	get_node("gui/intro").frame = 68
+	get_node("gui/intro").playing = true
 	pass # Replace with function body.
 
 func _on_timer_timeout():
