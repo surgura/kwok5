@@ -4,7 +4,7 @@ var current_tier = 1
 var maximum_tier = 2
 
 var requirements_map = {
-	1: { "ExampleItem": 2, "wooden_plank": 1},
+	1: { "wooden_plank": 1},
 	2: { "wooden_plank": 2}
 }
 
