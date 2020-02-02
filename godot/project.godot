@@ -24,6 +24,10 @@ config/name="kwok5"
 run/main_scene="res://world.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=700
+
 [input]
 
 throw_hook={
