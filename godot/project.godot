@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
-"class": "ItemModel",
+"class": "item",
 "language": "GDScript",
-"path": "res://inventory/models/ItemModel.gd"
+"path": "res://inventory/scenes/item.gd"
 } ]
 _global_script_class_icons={
-"ItemModel": ""
+"item": ""
 }
 
 [application]
