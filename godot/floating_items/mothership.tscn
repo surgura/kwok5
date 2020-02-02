@@ -1,0 +1,131 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://floating_items/mothership.gd" type="Script" id=1]
+[ext_resource path="res://images/mothership.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="mothership" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+mode = 1
+script = ExtResource( 1 )
+destroy_trigger = 2
+pickup_trigger = 2
+can_release_hook = true
+tier = 2
+
+[node name="sprite" type="Sprite" parent="."]
+rotation = -0.785398
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="."]
+position = Vector2( 224, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 160, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 96, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 32, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2( -32, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2( -96, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2( -160, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2( -224, 0 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -64 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 64 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2( -64, 48 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+position = Vector2( -128, 32 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+position = Vector2( -192, 16 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
+position = Vector2( 64, 48 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="."]
+position = Vector2( 128, 32 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="."]
+position = Vector2( 192, 16 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="."]
+position = Vector2( -64, -48 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="."]
+position = Vector2( -128, -32 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="."]
+position = Vector2( -192, -16 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="."]
+position = Vector2( 64, -48 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="."]
+position = Vector2( 128, -32 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="."]
+position = Vector2( 192, -16 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
