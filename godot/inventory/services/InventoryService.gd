@@ -4,7 +4,8 @@ const ICON_SIZE: int = 48
 const ITEMS_OFFSET: Vector2 = Vector2(16, 16)
 
 var item_map = {
-	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn")
+	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn"),
+	"treasure_chest": preload("res://inventory/scenes/treasure_chest.tscn")
 }
 
 var items = Array() 

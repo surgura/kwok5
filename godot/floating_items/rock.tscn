@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://floating_items/floating_item.gd" type="Script" id=1]
-[ext_resource path="res://images/rock01.png" type="Texture" id=2]
+[ext_resource path="res://floating_items/rock.gd" type="Script" id=1]
+[ext_resource path="res://images/rock02.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 29.2218
@@ -14,7 +14,6 @@ script = ExtResource( 1 )
 destroy_trigger = 2
 pickup_trigger = 2
 can_release_hook = true
-base_damage = 1.0
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( -1.19165, 13.5053 )
