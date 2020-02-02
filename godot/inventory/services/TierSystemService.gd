@@ -4,7 +4,7 @@ var current_tier = 1
 var maximum_tier = 2
 
 var requirements_map = {
-	1: { "wooden_plank": 1},
+	1: { "wooden_plank": 2},
 	2: { "wooden_plank": 2}
 }
 
@@ -36,7 +36,7 @@ func deliver(inventory: Object) -> int:
 		print("Tier does not exist!")
 		return -1 # Tier does not exist
 	else:
-		var inventory_count_prev = inventory.get_item_count()
+		var inventory_count_prev = inventory.get_item_size()
 		var dict_key_array = Array(required_items.keys())
 		#var dict_values_array = Array(required_items.values())
 		
@@ -64,7 +64,7 @@ func deliver(inventory: Object) -> int:
 			update_current_tier(current_tier + 1)
 			print("Next Tier!! :D  ", current_tier)
 			return 3 # Next tier! Gratz!
-		elif (inventory_count_prev != required_items.size()):
+		elif (inventory_count_prev != inventory.get_item_size()):
 			return 1 # Partially delivered
 		else:
 			return 2 # Nothing delivered

@@ -102,14 +102,20 @@ func deliver():
 	var tier_index = tiersystem.get_current_tier()-1
 	var textbox = get_node(textbox_path)
 	var result = tiersystem.deliver(inventory)
-	if result:
+	if result == 3: # tierup
 		state = "start_tier"
 		textbox.connect("on_close", self, "next_message")
 		textbox.show_stuff(convs[tier_index]["tierup"]["text"], convs[tier_index]["tierup"]["img"])
-	else:
+	elif result == 1: # partially
 		var req = requirement_list()
 		var base_text = convs[tier_index]["someloot"]["text"]
 		textbox.show_stuff(base_text + req, convs[tier_index]["someloot"]["img"])
+	elif result == 2: # nothing
+		var req = requirement_list()
+		var base_text = convs[tier_index]["noloot"]["text"]
+		textbox.show_stuff(base_text + req, convs[tier_index]["someloot"]["img"])
+	else:
+		print("ERRORORORRRRR IN TIER SYSTEMMMMM")
 
 func on_hit_raft() -> void:
 	if state == "start_tier":
