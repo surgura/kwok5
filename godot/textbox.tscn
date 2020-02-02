@@ -11,6 +11,8 @@ pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.45544
+margin_right = 2.45544
 script = ExtResource( 1 )
 
 [node name="background" type="TextureRect" parent="."]
@@ -36,3 +38,14 @@ position = Vector2( 208.773, -93.5302 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 size = 250
+
+[node name="Button" type="Button" parent="."]
+margin_left = 131.419
+margin_top = 169.428
+margin_right = 278.419
+margin_bottom = 223.428
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.0705882, 0.054902, 0.0980392, 1 )
+text = "Okay"
+flat = true
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
