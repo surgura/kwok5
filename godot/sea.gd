@@ -24,7 +24,7 @@ var waves = []
 
 var random = RandomNumberGenerator.new()
 
-func _ready():
+func initialize():
 	
 	noise.seed = 0
 	noise.octaves = 3
@@ -49,7 +49,7 @@ func _ready():
 
 func _process(delta):
 	time += delta
-	
+
 	for x in range(numColumns):
 		for y in range(numRows):
 			

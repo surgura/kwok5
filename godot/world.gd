@@ -14,12 +14,7 @@ var currentChunkY = 0
 func _ready():
 	for x in range(-1,2): # -1, 0, 1
 		for y in range (-1, 2):
-			var sea = Sea.instance()
-			add_child(sea)
-			sea.set_position(Vector2(x * 500, y * 400))
-			chunks.append(sea)
-			sea.chunkX = x
-			sea.chunkY = y
+			var sea = create_sea(x, y)
 
 func shouldBeLoaded(var sea)->bool:
 	var x = sea.chunkX
@@ -37,15 +32,20 @@ func ensureVisible(var x, var y):
 			break
 	
 	if not sea:
-		sea = Sea.instance()
-		add_child(sea)
-		sea.set_position(Vector2(x * 500, y * 400))
-		chunks.append(sea)
-		sea.chunkX = x
-		sea.chunkY = y
+		sea = create_sea(x, y)
 	
 	sea.set_process(true)
 	
+
+func create_sea(x, y):
+	var sea = Sea.instance()
+	add_child(sea)
+	sea.set_position(Vector2(x * 500, y * 400))
+	sea.initialize()
+	chunks.append(sea)
+	sea.chunkX = x
+	sea.chunkY = y
+	return sea
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
