@@ -14,7 +14,7 @@ script = ExtResource( 1 )
 destroy_trigger = 2
 pickup_trigger = 2
 can_release_hook = true
-base_damage = 2.0
+base_damage = 1.0
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( -1.19165, 13.5053 )

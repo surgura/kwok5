@@ -29,7 +29,8 @@ func get_weight_damage_factor(ship_weight : float) -> float:
 
 # Default impact speed damage factor.
 func get_speed_damage_factor(impact_speed : float) -> float:
-	return impact_speed / 250
+	#return impact_speed / 250
+	return 1.0#TODO
 
 # What should happen when the item collides with the raft.
 func on_hit_raft() -> void:
