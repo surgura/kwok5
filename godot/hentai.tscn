@@ -5,6 +5,5 @@
 
 [node name="AnimatedSprite" type="AnimatedSprite"]
 frames = ExtResource( 1 )
-frame = 124
-playing = true
+frame = 68
 script = ExtResource( 2 )

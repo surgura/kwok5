@@ -12,6 +12,7 @@ export(bool) var can_release_hook : bool = false
 export(bool) var is_being_reeled : bool = false
 export(float) var base_damage: float = 0.0
 export(String) var item: String = ""
+export(String) var display_text = ""
 
 func _init():
 	self.z_as_relative = false
@@ -34,6 +35,9 @@ func get_speed_damage_factor(impact_speed : float) -> float:
 
 # What should happen when the item collides with the raft.
 func on_hit_raft() -> void:
+	if display_text != "":
+		var textbox = get_tree().get_root().find_node("textbox", true, false)
+		textbox.show_stuff(display_text, get_node("sprite").texture)
 	if destroy_trigger == Trigger.IMPACT or (destroy_trigger == Trigger.CATCH and is_being_reeled):
 		self.queue_free()
 	
