@@ -16,9 +16,8 @@ can_release_hook = true
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( 3.7825, -2.16144 )
-scale = Vector2( 0.12942, 0.12942 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
-offset = Vector2( 0, 32 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
 position = Vector2( -0.540405, 7.56503 )

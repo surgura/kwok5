@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://everything.gd" type="Script" id=1]
 [ext_resource path="res://world.gd" type="Script" id=2]
@@ -14,6 +14,13 @@
 [ext_resource path="res://hentai.tscn" type="PackedScene" id=12]
 [ext_resource path="res://MainMenu.tscn" type="PackedScene" id=13]
 [ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=14]
+[ext_resource path="res://floating_items/trunk.tscn" type="PackedScene" id=15]
+[ext_resource path="res://floating_items/big_rock.tscn" type="PackedScene" id=16]
+[ext_resource path="res://floating_items/chest.tscn" type="PackedScene" id=17]
+[ext_resource path="res://floating_items/cloth.tscn" type="PackedScene" id=18]
+[ext_resource path="res://floating_items/pineapple.tscn" type="PackedScene" id=19]
+[ext_resource path="res://floating_items/global_game_jam.tscn" type="PackedScene" id=20]
+[ext_resource path="res://floating_items/diamond.tscn" type="PackedScene" id=21]
 
 [node name="everything" type="Node2D"]
 pause_mode = 2
@@ -57,9 +64,6 @@ position = Vector2( 1016.08, -61.3021 )
 [node name="rock5" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 617.028, 97.0525 )
 
-[node name="wooden_plank2" parent="world" instance=ExtResource( 5 )]
-position = Vector2( 661.698, -225.239 )
-
 [node name="rock8" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 754.389, -226.933 )
 
@@ -70,7 +74,7 @@ position = Vector2( 1018.88, 210.284 )
 position = Vector2( 1202.32, -18.3533 )
 
 [node name="wooden_plank4" parent="world" instance=ExtResource( 5 )]
-position = Vector2( 555.786, -348.706 )
+position = Vector2( 500.968, -514.328 )
 
 [node name="rock9" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 448.989, -474.83 )
@@ -102,8 +106,10 @@ ship_path = NodePath("../mothership")
 pause_mode = 2
 
 [node name="inventory" parent="gui" instance=ExtResource( 9 )]
+visible = false
 
 [node name="compass" parent="gui" instance=ExtResource( 10 )]
+visible = false
 margin_left = 939.922
 margin_top = 131.541
 margin_right = 979.922
@@ -119,15 +125,171 @@ margin_bottom = 297.375
 world = NodePath("../../world")
 
 [node name="intro" parent="gui" instance=ExtResource( 12 )]
+visible = false
 position = Vector2( 511, 334 )
 scale = Vector2( 0.51, 0.51 )
 frame = 97
 
 [node name="mainMenu" parent="gui" instance=ExtResource( 13 )]
+visible = false
 margin_left = -26.0
 margin_top = -27.0
 margin_right = -103.0
 margin_bottom = -128.0
 
+[node name="rock" parent="gui/mainMenu" instance=ExtResource( 15 )]
+position = Vector2( 462.316, 490.743 )
+
+[node name="rock2" parent="gui/mainMenu" instance=ExtResource( 15 )]
+position = Vector2( -607.831, 636.156 )
+
+[node name="shark" parent="gui/mainMenu" instance=ExtResource( 6 )]
+position = Vector2( -741.883, 754.303 )
+
 [node name="tiersystem" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="shark" parent="." instance=ExtResource( 6 )]
+position = Vector2( -204.366, 541.437 )
+
+[node name="shark2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -119.731, 535.139 )
+
+[node name="shark3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -382.201, 512.583 )
+
+[node name="shark4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -482.678, 436.712 )
+
+[node name="shark5" parent="." instance=ExtResource( 6 )]
+position = Vector2( -121.782, 703.284 )
+
+[node name="trunk" parent="." instance=ExtResource( 15 )]
+position = Vector2( 40.9599, 308.645 )
+
+[node name="trunk2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 161.895, 243.665 )
+
+[node name="rock" parent="." instance=ExtResource( 16 )]
+position = Vector2( -847.122, -529.953 )
+
+[node name="rock2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -868.55, -350.735 )
+
+[node name="rock3" parent="." instance=ExtResource( 16 )]
+position = Vector2( -753.617, -196.842 )
+
+[node name="rock4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1088.68, 140.165 )
+
+[node name="rock5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -718.553, 436.264 )
+
+[node name="chest" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1052.57, 801.295 )
+
+[node name="chest2" parent="." instance=ExtResource( 18 )]
+position = Vector2( -1171.17, -815.279 )
+
+[node name="chest3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 600.99, -910.149 )
+
+[node name="chest4" parent="." instance=ExtResource( 18 )]
+position = Vector2( -981.432, 892.37 )
+
+[node name="chest5" parent="." instance=ExtResource( 18 )]
+position = Vector2( 817.292, 175.157 )
+
+[node name="chest6" parent="." instance=ExtResource( 18 )]
+position = Vector2( -40.3276, -989.839 )
+
+[node name="chest7" parent="." instance=ExtResource( 18 )]
+position = Vector2( -138.992, 953.086 )
+
+[node name="chest8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1227.13, 664.684 )
+
+[node name="chest9" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1963.31, -1046.76 )
+
+[node name="chest10" parent="." instance=ExtResource( 18 )]
+position = Vector2( -1763.16, -636.925 )
+
+[node name="chest11" parent="." instance=ExtResource( 18 )]
+position = Vector2( -560.212, 228.284 )
+
+[node name="chest12" parent="." instance=ExtResource( 18 )]
+position = Vector2( -1387.47, 793.706 )
+
+[node name="chest13" parent="." instance=ExtResource( 18 )]
+position = Vector2( 828.676, 1290.82 )
+
+[node name="chest14" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2065.77, -10.7867 )
+
+[node name="wooden_plank" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1368.5, 1199.75 )
+
+[node name="wooden_plank2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1782.13, 281.411 )
+
+[node name="wooden_plank3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1686.3, 304.18 )
+
+[node name="wooden_plank4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 494.736, 816.475 )
+
+[node name="chest15" parent="." instance=ExtResource( 17 )]
+position = Vector2( -828.908, 1190.92 )
+
+[node name="chest" parent="chest15" instance=ExtResource( 17 )]
+position = Vector2( -125.387, -1759.27 )
+
+[node name="rock6" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2020.81, -678.395 )
+
+[node name="rock7" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2191.58, 558.702 )
+
+[node name="rock8" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2381.31, 513.164 )
+
+[node name="rock9" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2802.53, 592.855 )
+
+[node name="chest16" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2593.82, 547.317 )
+
+[node name="diamond" parent="." instance=ExtResource( 21 )]
+position = Vector2( 2047.37, 1218.99 )
+
+[node name="diamond2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1406.06, 1355.6 )
+
+[node name="diamond3" parent="." instance=ExtResource( 21 )]
+position = Vector2( -533.074, -1069.26 )
+
+[node name="diamond4" parent="." instance=ExtResource( 21 )]
+position = Vector2( -2081.34, 767.026 )
+
+[node name="diamond5" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1455.39, -1285.95 )
+
+[node name="diamond6" parent="." instance=ExtResource( 21 )]
+position = Vector2( 3083.35, -709.142 )
+
+[node name="shark6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -453.384, 882.339 )
+
+[node name="global_game_jam" parent="." instance=ExtResource( 20 )]
+position = Vector2( 2246.36, 1791.18 )
+
+[node name="global_game_jam2" parent="." instance=ExtResource( 20 )]
+position = Vector2( -1773.37, -1307.72 )
+
+[node name="pineapple" parent="." instance=ExtResource( 19 )]
+position = Vector2( -1896.25, 1813.53 )
+
+[node name="pineapple2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 2500.28, -1511.41 )
 [connection signal="start_game" from="gui/mainMenu" to="." method="_on_MainMenu_start_game"]

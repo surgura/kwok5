@@ -6,7 +6,10 @@ const ITEMS_OFFSET: Vector2 = Vector2(16, 16)
 var item_map = {
 	"wooden_plank": preload("res://inventory/scenes/wooden_plank.tscn"),
 	"treasure_chest": preload("res://inventory/scenes/treasure_chest.tscn"),
-	"cloth": preload("res://inventory/scenes/cloth.tscn")
+	"cloth": preload("res://inventory/scenes/cloth.tscn"),
+	"diamond": preload("res://inventory/scenes/diamond.tscn"),
+	"global_game_jam": preload("res://inventory/scenes/global_game_jam.tscn"),
+	"pineapple": preload("res://inventory/scenes/pineapple.tscn")
 }
 
 var items = Array() 
