@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://everything.gd" type="Script" id=1]
 [ext_resource path="res://world.gd" type="Script" id=2]
@@ -11,10 +11,12 @@
 [ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Compass.tscn" type="PackedScene" id=10]
 [ext_resource path="res://textbox.tscn" type="PackedScene" id=11]
-[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=13]
+[ext_resource path="res://hentai.tscn" type="PackedScene" id=12]
+[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=14]
 
 [node name="everything" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="world" type="Node2D" parent="."]
@@ -91,7 +93,7 @@ position = Vector2( -176.982, -454.415 )
 tier = 0
 
 [node name="sailor" parent="world" instance=ExtResource( 8 )]
-position = Vector2( -43.0664, -238.58 )
+position = Vector2( -256.066, -323.58 )
 inventory_path = NodePath("../../gui/inventory")
 tiersystem_path = NodePath("../../tiersystem")
 textbox_path = NodePath("../../gui/textbox")
@@ -107,7 +109,7 @@ margin_top = 131.541
 margin_right = 979.922
 margin_bottom = 171.541
 player = NodePath("../../world/raft")
-ship = NodePath("../../world/mothership")
+ship = NodePath("../../world/sailor")
 
 [node name="textbox" parent="gui" instance=ExtResource( 11 )]
 margin_left = 522.48
@@ -116,7 +118,16 @@ margin_right = 522.48
 margin_bottom = 297.375
 world = NodePath("../../world")
 
-[node name="MainMenu" parent="gui" instance=ExtResource( 12 )]
+[node name="intro" parent="gui" instance=ExtResource( 12 )]
+position = Vector2( 511, 334 )
+scale = Vector2( 0.51, 0.51 )
+frame = 77
 
-[node name="tiersystem" parent="." instance=ExtResource( 13 )]
-[connection signal="start_game" from="gui/MainMenu" to="." method="_on_MainMenu_start_game"]
+[node name="mainMenu" parent="gui" instance=ExtResource( 13 )]
+margin_left = -26.0
+margin_top = -27.0
+margin_right = -103.0
+margin_bottom = -128.0
+
+[node name="tiersystem" parent="." instance=ExtResource( 14 )]
+[connection signal="start_game" from="gui/mainMenu" to="." method="_on_MainMenu_start_game"]

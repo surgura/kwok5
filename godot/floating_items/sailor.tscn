@@ -16,12 +16,12 @@ pickup_trigger = 2
 can_release_hook = true
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( -9.13594, 12.7109 )
+position = Vector2( -8.13594, -30.2891 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, 32 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-position = Vector2( 1.58885, 38.927 )
+position = Vector2( 2.58885, -17.073 )
 scale = Vector2( 1.75, 1.75 )
 shape = SubResource( 1 )
