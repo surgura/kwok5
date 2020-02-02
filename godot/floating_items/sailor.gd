@@ -3,6 +3,7 @@ extends "res://floating_items/floating_item.gd"
 export(NodePath) var inventory_path: NodePath
 export(NodePath) var tiersystem_path: NodePath
 export(NodePath) var textbox_path: NodePath
+export(NodePath) var ship_path: NodePath
 
 const tex_sailor = preload("res://images/sailor_swim.png")
 const tex_you = preload("res://images/sailor_head.png")
@@ -122,6 +123,7 @@ func deliver():
 	
 	var result = tiersystem.deliver(inventory)
 	if result == 3: # tierup
+		get_node(ship_path).tier = tier_index+1
 		state = "start_tier"
 		textbox.connect("on_close", self, "next_message")
 		textbox.show_stuff(convs[tier_index]["tierup"]["text"], convs[tier_index]["tierup"]["img"])
