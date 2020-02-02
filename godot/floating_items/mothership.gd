@@ -1,7 +1,7 @@
 extends "res://floating_items/floating_item.gd"
 
 export(int) var tier = 0
-var max_tier : int = 3
+var max_tier : int = 4
 var min_offset : float = 0.0
 var max_offset : float = -320.0
 var min_rotation : float = -PI / 4.0
@@ -22,3 +22,5 @@ func _process(_delta):
 
 func repair():
 	self.tier += 1
+	if (self.tier == max_tier):
+		print("YOU WIN!")

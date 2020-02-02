@@ -13,56 +13,104 @@ var convs = [
 	{
 		"enter": [
 			{
-				"text": "Oh no you sank",
+				"text": "Sailor: …What happened? All I can remember are the tentacles… Last time I saw those was when I was watching that hent… never mind.",
 				"img": tex_sailor
 			},
 			{
-				"text": "This was bad",
+				"text": "Is that our ship?",
 				"img": tex_you
 			},
 			{
-				"text": "Let's repair",
+				"text": "Damn, we need to fix that so we can get out of here. How about you hook me up with the stuff I need? I can use it to rebuild the ship.",
 				"img": tex_sailor
 			}
 		],
 		"firsttimetask": {
-			"text": "you will need to get: ",
+			"text": "Alright, here's what we need to get started: ",
 			"img": tex_sailor
 		},
 		"noloot": {
-			"text": "you need more shit. We need: ",
+			"text": "Come on bro, get me the items. I'm freezing down here. By the way, why won't you let me onto your raft anyway?\n\nI need:",
 			"img": tex_sailor
 		},
 		"someloot": {
-			"text": "good job keep it up. We need: ",
+			"text": "Alright, getting there. Here's what's left:",
 			"img": tex_sailor
 		},
 		"tierup": {
-			"text": "nice bro next tier",
+			"text": "Great! That'll do nicely. Let's patch this ship up…",
 			"img": tex_sailor
 		}
 	},
 	{
 		"enter": [
 			{
-				"text": "this is tier 2",
+				"text": "Alright, that's a bit better, but I don't think that's quite gonna float our boat yet.",
 				"img": tex_sailor
 			}
 		],
 		"firsttimetask": {
-			"text": "you will need to get tier 2: ",
+			"text": "We need some sails. Can you get me:",
 			"img": tex_sailor
 		},
 		"noloot": {
-			"text": "you need more shit tier 2.  We need: ",
+			"text": "You didn't bring me anything useful. Get your shit together and bring me:",
 			"img": tex_sailor
 		},
 		"someloot": {
-			"text": "good job keep it up tier 2.  We need: ",
+			"text": "Good, making progress here. We need:",
 			"img": tex_sailor
 		},
 		"tierup": {
-			"text": "nice bro next tier tier 2",
+			"text": "Alright let's make this baby sail!'",
+			"img": tex_sailor
+		}
+	},
+	{
+		"enter": [
+			{
+				"text": "Looks like she's not quite keeping her head above the water. We need more stuff to fix this.",
+				"img": tex_sailor
+			}
+		],
+		"firsttimetask": {
+			"text": "Can you find me these materials:",
+			"img": tex_sailor
+		},
+		"noloot": {
+			"text": "Stop bumping into me if you don't have what we need:",
+			"img": tex_sailor
+		},
+		"someloot": {
+			"text": "Cool, here's what's left:",
+			"img": tex_sailor
+		},
+		"tierup": {
+			"text": "Nice bro! I think she's almost waterproof!",
+			"img": tex_sailor
+		}
+	},
+	{
+		"enter": [
+			{
+				"text": "I think I have enough to fix the rest, but I'm kinda dying here…",
+				"img": tex_sailor
+			}
+		],
+		"firsttimetask": {
+			"text": "Can you get me some something to eat? How about:",
+			"img": tex_sailor
+		},
+		"noloot": {
+			"text": "I'm hungry, get outta here and get:",
+			"img": tex_sailor
+		},
+		"someloot": {
+			"text": "Still hungry for dat:",
+			"img": tex_sailor
+		},
+		"tierup": {
+			"text": "Hmmm! This global game jam is delicious. Time to set sail matey!",
 			"img": tex_sailor
 		}
 	}
