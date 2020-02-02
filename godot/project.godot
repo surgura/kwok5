@@ -21,12 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="kwok5"
-run/main_scene="res://Universe.tscn"
+run/main_scene="res://world.tscn"
 config/icon="res://icon.png"
-
-[display]
-
-window/size/height=700
 
 [input]
 
