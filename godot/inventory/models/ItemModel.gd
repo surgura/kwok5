@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 class_name ItemModel
 
@@ -10,7 +10,7 @@ var weight: int
 var is_destructible: bool
 var priority: int
 
-const ICON_SIZE: int = 40
+const ICON_SIZE: int = 48
 
 # Decreases durability
 # Returns excessive damage
@@ -41,9 +41,15 @@ func init(item_name: String, durability: float, weight: int, is_destructible: bo
 	print(name, durability_current, weight, is_destructible, priority)
 
 func _ready():
-	var texsize = texture.get_size()
+	var image = get_node("image")
+	var texsize = image.texture.get_size()
 	var scale: float = ICON_SIZE / max(texsize.x, texsize.y)
-	set_scale(Vector2(scale, scale))
+	image.set_scale(Vector2(scale, scale))
+	
+	var bg = get_node("background")
+	texsize = bg.texture.get_size()
+	scale = ICON_SIZE / max(texsize.x, texsize.y)
+	bg.set_scale(Vector2(scale, scale))
 
 func _process(delta):
 	pass

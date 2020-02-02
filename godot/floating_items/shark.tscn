@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://floating_items/shark.gd" type="Script" id=1]
+[ext_resource path="res://floating_items/floating_item.gd" type="Script" id=1]
 [ext_resource path="res://images/shark.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -12,6 +12,7 @@ collision_mask = 3
 mode = 2
 script = ExtResource( 1 )
 pickup_trigger = 2
+base_damage = 2.0
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( 3.51234, 8.56115 )
