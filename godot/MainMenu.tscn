@@ -1,23 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://images/paper.png" type="Texture" id=2]
 [ext_resource path="res://fonts/mainMenuFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://menu.tres" type="SpriteFrames" id=4]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="backgroundImage" type="TextureRect" parent="."]
-margin_right = 1133.0
-margin_bottom = 677.0
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 510.77, 359.02 )
+scale = Vector2( 0.527707, 0.527707 )
+frames = ExtResource( 4 )
+frame = 5
+playing = true
 
 [node name="playButton" type="Control" parent="."]
-margin_left = 735.945
-margin_top = 376.502
-margin_right = 882.945
-margin_bottom = 491.502
+margin_left = 160.0
+margin_top = 240.0
+margin_right = 307.0
+margin_bottom = 355.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="playButton"]
 visible = false
@@ -46,6 +56,9 @@ margin_right = 124.141
 margin_bottom = 78.7305
 focus_mode = 0
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="mouse_entered" from="playButton/button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="playButton/button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="playButton/button" to="." method="_on_button_pressed"]

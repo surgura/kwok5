@@ -28,7 +28,6 @@ position = Vector2( 999.955, -542.002 )
 position = Vector2( 548.687, -205.905 )
 
 [node name="raft" parent="world" instance=ExtResource( 4 )]
-editor/display_folded = true
 position = Vector2( 8.7236, 18.6952 )
 inventory_path = NodePath("../../gui/inventory")
 
