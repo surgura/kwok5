@@ -4,7 +4,8 @@ export(NodePath) var inventory_path: NodePath
 export(NodePath) var tiersystem_path: NodePath
 export(NodePath) var textbox_path: NodePath
 
-const tex_sailor = preload("res://images/character01.png")
+const tex_sailor = preload("res://images/sailor_swim.png")
+const tex_you = preload("res://images/sailor_head.png")
 
 var start_timer
 
@@ -17,7 +18,7 @@ var convs = [
 			},
 			{
 				"text": "This was bad",
-				"img": tex_sailor
+				"img": tex_you
 			},
 			{
 				"text": "Let's repair",
