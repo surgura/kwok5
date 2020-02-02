@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://inventory/models/treasure_chest.gd" type="Script" id=1]
+[ext_resource path="res://inventory/models/wooden_plank.gd" type="Script" id=1]
 [ext_resource path="res://images/paper.png" type="Texture" id=2]
-[ext_resource path="res://images/plank01.png" type="Texture" id=3]
+[ext_resource path="res://images/chest.png" type="Texture" id=3]
 
 [node name="item" type="Node2D"]
 script = ExtResource( 1 )

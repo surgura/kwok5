@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://floating_items/wooden_plank.gd" type="Script" id=1]
-[ext_resource path="res://images/plank01.png" type="Texture" id=2]
+[ext_resource path="res://floating_items/floating_item.gd" type="Script" id=1]
+[ext_resource path="res://images/chest.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 33.2671
 
-[node name="wooden_plank" type="RigidBody2D"]
+[node name="chest" type="RigidBody2D"]
 collision_layer = 3
 collision_mask = 3
 mode = 2
 script = ExtResource( 1 )
 destroy_trigger = 1
 can_release_hook = true
-item = "wooden_plank"
+item = "treasure_chest"
 
 [node name="sprite" type="Sprite" parent="."]
 scale = Vector2( 0.12942, 0.12942 )
@@ -21,5 +21,6 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, 32 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
+position = Vector2( 1.08072, -1.08072 )
 scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 1 )
