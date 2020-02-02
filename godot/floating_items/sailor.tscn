@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://floating_items/sailor.gd" type="Script" id=1]
+[ext_resource path="res://images/character09.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 29.2218
+
+[node name="sailor" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+mode = 1
+script = ExtResource( 1 )
+destroy_trigger = 2
+pickup_trigger = 2
+can_release_hook = true
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( -51.6379, -7.14987 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 32 )
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+position = Vector2( 1.58885, 17.8746 )
+scale = Vector2( 1.75, 1.75 )
+shape = SubResource( 1 )

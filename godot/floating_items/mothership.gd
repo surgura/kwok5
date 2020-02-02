@@ -7,9 +7,6 @@ var max_offset : float = -320.0
 var min_rotation : float = -PI / 4.0
 var max_rotation : float = 0.0
 
-func get_base_damage() -> float:
-	return 0.0
-
 func get_target_rotation() -> float:
 	var fraction = (float(tier) / float(max_tier))
 	return (1 - fraction) * min_rotation + fraction * max_rotation
