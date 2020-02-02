@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://floating_items/rock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://raft.tscn" type="PackedScene" id=2]
 [ext_resource path="res://floating_items/wooden_plank.tscn" type="PackedScene" id=3]
 [ext_resource path="res://floating_items/shark.tscn" type="PackedScene" id=4]
-[ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Compass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://textbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://floating_items/mothership.tscn" type="PackedScene" id=5]
+[ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Compass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://textbox.tscn" type="PackedScene" id=8]
 
 [node name="everything" type="Node2D"]
 
@@ -77,11 +78,15 @@ position = Vector2( 72.9048, -248.059 )
 [node name="shark3" parent="world" instance=ExtResource( 4 )]
 position = Vector2( 1553.7, -313.323 )
 
+[node name="mothership" parent="world" instance=ExtResource( 5 )]
+position = Vector2( -176.982, -454.415 )
+tier = 0
+
 [node name="gui" type="CanvasLayer" parent="."]
 
-[node name="inventory" parent="gui" instance=ExtResource( 5 )]
+[node name="inventory" parent="gui" instance=ExtResource( 6 )]
 
-[node name="compass" parent="gui" instance=ExtResource( 6 )]
+[node name="compass" parent="gui" instance=ExtResource( 7 )]
 margin_left = 939.922
 margin_top = 131.541
 margin_right = 979.922
@@ -89,7 +94,7 @@ margin_bottom = 171.541
 ship = NodePath("../../world/rock")
 player = NodePath("../../world/raft")
 
-[node name="textbox" parent="gui" instance=ExtResource( 7 )]
+[node name="textbox" parent="gui" instance=ExtResource( 8 )]
 margin_left = 522.48
 margin_top = 297.375
 margin_right = 522.48
