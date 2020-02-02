@@ -8,19 +8,19 @@
 [ext_resource path="res://floating_items/shark.tscn" type="PackedScene" id=6]
 [ext_resource path="res://floating_items/mothership.tscn" type="PackedScene" id=7]
 [ext_resource path="res://floating_items/sailor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Compass.tscn" type="PackedScene" id=10]
-[ext_resource path="res://textbox.tscn" type="PackedScene" id=11]
-[ext_resource path="res://hentai.tscn" type="PackedScene" id=12]
-[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=14]
-[ext_resource path="res://floating_items/trunk.tscn" type="PackedScene" id=15]
-[ext_resource path="res://floating_items/big_rock.tscn" type="PackedScene" id=16]
-[ext_resource path="res://floating_items/chest.tscn" type="PackedScene" id=17]
-[ext_resource path="res://floating_items/cloth.tscn" type="PackedScene" id=18]
-[ext_resource path="res://floating_items/pineapple.tscn" type="PackedScene" id=19]
-[ext_resource path="res://floating_items/global_game_jam.tscn" type="PackedScene" id=20]
-[ext_resource path="res://floating_items/diamond.tscn" type="PackedScene" id=21]
+[ext_resource path="res://floating_items/trunk.tscn" type="PackedScene" id=9]
+[ext_resource path="res://floating_items/big_rock.tscn" type="PackedScene" id=10]
+[ext_resource path="res://floating_items/cloth.tscn" type="PackedScene" id=11]
+[ext_resource path="res://floating_items/chest.tscn" type="PackedScene" id=12]
+[ext_resource path="res://floating_items/diamond.tscn" type="PackedScene" id=13]
+[ext_resource path="res://floating_items/global_game_jam.tscn" type="PackedScene" id=14]
+[ext_resource path="res://floating_items/pineapple.tscn" type="PackedScene" id=15]
+[ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Compass.tscn" type="PackedScene" id=17]
+[ext_resource path="res://textbox.tscn" type="PackedScene" id=18]
+[ext_resource path="res://hentai.tscn" type="PackedScene" id=19]
+[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=21]
 
 [node name="everything" type="Node2D"]
 pause_mode = 2
@@ -117,19 +117,19 @@ position = Vector2( -482.678, 436.712 )
 [node name="shark8" parent="world" instance=ExtResource( 6 )]
 position = Vector2( -121.782, 703.284 )
 
-[node name="trunk" parent="world" instance=ExtResource( 15 )]
+[node name="trunk" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 40.9599, 308.645 )
 
-[node name="trunk2" parent="world" instance=ExtResource( 15 )]
+[node name="trunk2" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 161.895, 243.665 )
 
-[node name="rock11" parent="world" instance=ExtResource( 16 )]
+[node name="rock11" parent="world" instance=ExtResource( 10 )]
 position = Vector2( -847.122, -529.953 )
 
-[node name="rock12" parent="world" instance=ExtResource( 16 )]
+[node name="rock12" parent="world" instance=ExtResource( 10 )]
 position = Vector2( -868.55, -350.735 )
 
-[node name="rock13" parent="world" instance=ExtResource( 16 )]
+[node name="rock13" parent="world" instance=ExtResource( 10 )]
 position = Vector2( -753.617, -196.842 )
 
 [node name="rock14" parent="world" instance=ExtResource( 3 )]
@@ -138,25 +138,25 @@ position = Vector2( -1088.68, 140.165 )
 [node name="rock15" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -718.553, 436.264 )
 
-[node name="chest" parent="world" instance=ExtResource( 18 )]
+[node name="chest" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 1052.57, 801.295 )
 
-[node name="chest2" parent="world" instance=ExtResource( 18 )]
+[node name="chest2" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -1171.17, -815.279 )
 
-[node name="chest3" parent="world" instance=ExtResource( 18 )]
+[node name="chest3" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 600.99, -910.149 )
 
-[node name="chest4" parent="world" instance=ExtResource( 18 )]
+[node name="chest4" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -981.432, 892.37 )
 
-[node name="chest5" parent="world" instance=ExtResource( 18 )]
+[node name="chest5" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 817.292, 175.157 )
 
-[node name="chest6" parent="world" instance=ExtResource( 18 )]
+[node name="chest6" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -40.3276, -989.839 )
 
-[node name="chest7" parent="world" instance=ExtResource( 18 )]
+[node name="chest7" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -138.992, 953.086 )
 
 [node name="shark10" parent="world" instance=ExtResource( 6 )]
@@ -195,13 +195,13 @@ position = Vector2( 2577.29, 1791.63 )
 [node name="shark21" parent="world" instance=ExtResource( 6 )]
 position = Vector2( 1878.25, 2135.16 )
 
-[node name="rock30" parent="world" instance=ExtResource( 16 )]
+[node name="rock30" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 2653.19, 2075.24 )
 
-[node name="trunk3" parent="world" instance=ExtResource( 15 )]
+[node name="trunk3" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 2229.77, 2171.11 )
 
-[node name="trunk4" parent="world" instance=ExtResource( 15 )]
+[node name="trunk4" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 2133.9, 1591.91 )
 
 [node name="rock31" parent="world" instance=ExtResource( 3 )]
@@ -240,25 +240,25 @@ position = Vector2( 3004.71, -1232.47 )
 [node name="rock36" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 2597.27, 709.124 )
 
-[node name="chest8" parent="world" instance=ExtResource( 18 )]
+[node name="chest8" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 1227.13, 664.684 )
 
-[node name="chest9" parent="world" instance=ExtResource( 18 )]
+[node name="chest9" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 1963.31, -1046.76 )
 
-[node name="chest10" parent="world" instance=ExtResource( 18 )]
+[node name="chest10" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -1763.16, -636.925 )
 
-[node name="chest11" parent="world" instance=ExtResource( 18 )]
+[node name="chest11" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -560.212, 228.284 )
 
-[node name="chest12" parent="world" instance=ExtResource( 18 )]
+[node name="chest12" parent="world" instance=ExtResource( 11 )]
 position = Vector2( -1387.47, 793.706 )
 
-[node name="chest13" parent="world" instance=ExtResource( 18 )]
+[node name="chest13" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 828.676, 1290.82 )
 
-[node name="chest14" parent="world" instance=ExtResource( 18 )]
+[node name="chest14" parent="world" instance=ExtResource( 11 )]
 position = Vector2( 2065.77, -10.7867 )
 
 [node name="wooden_plank2" parent="world" instance=ExtResource( 5 )]
@@ -273,58 +273,58 @@ position = Vector2( 1686.3, 304.18 )
 [node name="wooden_plank9" parent="world" instance=ExtResource( 5 )]
 position = Vector2( 494.736, 816.475 )
 
-[node name="chest17" parent="world" instance=ExtResource( 17 )]
+[node name="chest17" parent="world" instance=ExtResource( 12 )]
 position = Vector2( -954.295, -568.347 )
 
-[node name="chest15" parent="world" instance=ExtResource( 17 )]
+[node name="chest15" parent="world" instance=ExtResource( 12 )]
 position = Vector2( -828.908, 1190.92 )
 
-[node name="rock16" parent="world" instance=ExtResource( 16 )]
+[node name="rock16" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 2020.81, -678.395 )
 
-[node name="rock17" parent="world" instance=ExtResource( 16 )]
+[node name="rock17" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 2191.58, 558.702 )
 
-[node name="rock18" parent="world" instance=ExtResource( 16 )]
+[node name="rock18" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 2381.31, 513.164 )
 
-[node name="rock19" parent="world" instance=ExtResource( 16 )]
+[node name="rock19" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 2802.53, 592.855 )
 
-[node name="chest16" parent="world" instance=ExtResource( 17 )]
+[node name="chest16" parent="world" instance=ExtResource( 12 )]
 position = Vector2( 2593.82, 547.317 )
 
-[node name="diamond" parent="world" instance=ExtResource( 21 )]
+[node name="diamond" parent="world" instance=ExtResource( 13 )]
 position = Vector2( 2047.37, 1218.99 )
 
-[node name="diamond2" parent="world" instance=ExtResource( 21 )]
+[node name="diamond2" parent="world" instance=ExtResource( 13 )]
 position = Vector2( 1406.06, 1355.6 )
 
-[node name="diamond3" parent="world" instance=ExtResource( 21 )]
+[node name="diamond3" parent="world" instance=ExtResource( 13 )]
 position = Vector2( -533.074, -1069.26 )
 
-[node name="diamond4" parent="world" instance=ExtResource( 21 )]
+[node name="diamond4" parent="world" instance=ExtResource( 13 )]
 position = Vector2( -2081.34, 767.026 )
 
-[node name="diamond5" parent="world" instance=ExtResource( 21 )]
+[node name="diamond5" parent="world" instance=ExtResource( 13 )]
 position = Vector2( 1455.39, -1285.95 )
 
-[node name="diamond6" parent="world" instance=ExtResource( 21 )]
+[node name="diamond6" parent="world" instance=ExtResource( 13 )]
 position = Vector2( 3083.35, -709.142 )
 
 [node name="shark9" parent="world" instance=ExtResource( 6 )]
 position = Vector2( -453.384, 882.339 )
 
-[node name="global_game_jam" parent="world" instance=ExtResource( 20 )]
+[node name="global_game_jam" parent="world" instance=ExtResource( 14 )]
 position = Vector2( 2246.36, 1791.18 )
 
-[node name="global_game_jam2" parent="world" instance=ExtResource( 20 )]
+[node name="global_game_jam2" parent="world" instance=ExtResource( 14 )]
 position = Vector2( -1773.37, -1307.72 )
 
-[node name="pineapple" parent="world" instance=ExtResource( 19 )]
+[node name="pineapple" parent="world" instance=ExtResource( 15 )]
 position = Vector2( -1896.25, 1813.53 )
 
-[node name="pineapple2" parent="world" instance=ExtResource( 19 )]
+[node name="pineapple2" parent="world" instance=ExtResource( 15 )]
 position = Vector2( 2500.28, -1511.41 )
 
 [node name="rock20" parent="world" instance=ExtResource( 3 )]
@@ -336,28 +336,28 @@ position = Vector2( -451.635, 1278.33 )
 [node name="rock22" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -1112.1, 1639.48 )
 
-[node name="rock23" parent="world" instance=ExtResource( 16 )]
+[node name="rock23" parent="world" instance=ExtResource( 10 )]
 position = Vector2( -1092.58, 1063.6 )
 
-[node name="rock24" parent="world" instance=ExtResource( 16 )]
+[node name="rock24" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 982.487, 2062.13 )
 
-[node name="rock25" parent="world" instance=ExtResource( 16 )]
+[node name="rock25" parent="world" instance=ExtResource( 10 )]
 position = Vector2( -733.519, -1564.36 )
 
-[node name="rock26" parent="world" instance=ExtResource( 16 )]
+[node name="rock26" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 816.606, -1575.8 )
 
-[node name="rock27" parent="world" instance=ExtResource( 16 )]
+[node name="rock27" parent="world" instance=ExtResource( 10 )]
 position = Vector2( -2494.12, -537.149 )
 
-[node name="rock28" parent="world" instance=ExtResource( 16 )]
+[node name="rock28" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 3952.7, -614.399 )
 
-[node name="rock29" parent="world" instance=ExtResource( 16 )]
+[node name="rock29" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 2864.19, -164.947 )
 
-[node name="rock37" parent="world" instance=ExtResource( 16 )]
+[node name="rock37" parent="world" instance=ExtResource( 10 )]
 position = Vector2( 1859.94, -1688.87 )
 
 [node name="rock38" parent="world" instance=ExtResource( 3 )]
@@ -396,28 +396,28 @@ position = Vector2( -1530.67, 1750.13 )
 [node name="shark30" parent="world" instance=ExtResource( 6 )]
 position = Vector2( -2172.26, 1819.87 )
 
-[node name="trunk5" parent="world" instance=ExtResource( 15 )]
+[node name="trunk5" parent="world" instance=ExtResource( 9 )]
 position = Vector2( -1799.57, 1063.77 )
 
-[node name="trunk6" parent="world" instance=ExtResource( 15 )]
+[node name="trunk6" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 306.67, 625.4 )
 
-[node name="trunk7" parent="world" instance=ExtResource( 15 )]
+[node name="trunk7" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 1364.41, 997.285 )
 
-[node name="trunk8" parent="world" instance=ExtResource( 15 )]
+[node name="trunk8" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 464.596, 1539.7 )
 
-[node name="trunk9" parent="world" instance=ExtResource( 15 )]
+[node name="trunk9" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 1385.43, -814.958 )
 
-[node name="trunk10" parent="world" instance=ExtResource( 15 )]
+[node name="trunk10" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 3159.83, -974.738 )
 
-[node name="trunk11" parent="world" instance=ExtResource( 15 )]
+[node name="trunk11" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 2230.59, 160.542 )
 
-[node name="trunk12" parent="world" instance=ExtResource( 15 )]
+[node name="trunk12" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 3050.51, 1220.14 )
 
 [node name="rock47" parent="world" instance=ExtResource( 3 )]
@@ -435,10 +435,10 @@ position = Vector2( 792.028, 982.705 )
 [node name="shark31" parent="world" instance=ExtResource( 6 )]
 position = Vector2( -1784.52, 2062.56 )
 
-[node name="rock51" parent="world" instance=ExtResource( 15 )]
+[node name="rock51" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 436.316, 463.743 )
 
-[node name="rock52" parent="world" instance=ExtResource( 15 )]
+[node name="rock52" parent="world" instance=ExtResource( 9 )]
 position = Vector2( -633.831, 609.156 )
 
 [node name="shark32" parent="world" instance=ExtResource( 6 )]
@@ -456,10 +456,10 @@ position = Vector2( 3364.31, -1588.65 )
 [node name="rock54" parent="world" instance=ExtResource( 3 )]
 position = Vector2( 2583.46, -1735.91 )
 
-[node name="trunk13" parent="world" instance=ExtResource( 15 )]
+[node name="trunk13" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 2487.57, -1396.86 )
 
-[node name="trunk14" parent="world" instance=ExtResource( 15 )]
+[node name="trunk14" parent="world" instance=ExtResource( 9 )]
 position = Vector2( 2641.68, -1403.71 )
 
 [node name="rock55" parent="world" instance=ExtResource( 3 )]
@@ -528,7 +528,7 @@ position = Vector2( -2599.46, 81.2905 )
 [node name="rock71" parent="world" instance=ExtResource( 3 )]
 position = Vector2( -2257.21, -869.405 )
 
-[node name="chest18" parent="world" instance=ExtResource( 17 )]
+[node name="chest18" parent="world" instance=ExtResource( 12 )]
 position = Vector2( -2948.05, 106.643 )
 
 [node name="shark40" parent="world" instance=ExtResource( 6 )]
@@ -558,27 +558,14 @@ position = Vector2( -209.196, -1584.51 )
 [node name="shark48" parent="world" instance=ExtResource( 6 )]
 position = Vector2( -411.078, -1454.73 )
 
-[node name="chest19" parent="world" instance=ExtResource( 17 )]
-position = Vector2( 210.727, 27.6893 )
-
-[node name="cloth" parent="world" instance=ExtResource( 18 )]
-position = Vector2( 319.913, 12.8843 )
-
-[node name="diamond7" parent="world" instance=ExtResource( 21 )]
-position = Vector2( 401.341, 20.2867 )
-
-[node name="global_game_jam3" parent="world" instance=ExtResource( 20 )]
-position = Vector2( 399.49, 107.266 )
-
-[node name="pineapple3" parent="world" instance=ExtResource( 19 )]
-position = Vector2( 501.274, 12.8843 )
-
 [node name="gui" type="CanvasLayer" parent="."]
 pause_mode = 2
 
-[node name="inventory" parent="gui" instance=ExtResource( 9 )]
+[node name="inventory" parent="gui" instance=ExtResource( 16 )]
+margin_left = 1.75818
+margin_right = 1.75818
 
-[node name="compass" parent="gui" instance=ExtResource( 10 )]
+[node name="compass" parent="gui" instance=ExtResource( 17 )]
 margin_left = 939.922
 margin_top = 131.541
 margin_right = 979.922
@@ -586,24 +573,24 @@ margin_bottom = 171.541
 player = NodePath("../../world/raft")
 ship = NodePath("../../world/sailor")
 
-[node name="textbox" parent="gui" instance=ExtResource( 11 )]
+[node name="textbox" parent="gui" instance=ExtResource( 18 )]
 margin_left = 522.48
 margin_top = 297.375
 margin_right = 522.48
 margin_bottom = 297.375
 world = NodePath("../../world")
 
-[node name="intro" parent="gui" instance=ExtResource( 12 )]
+[node name="intro" parent="gui" instance=ExtResource( 19 )]
 position = Vector2( 511, 334 )
 scale = Vector2( 0.51, 0.51 )
 frame = 97
 
-[node name="mainMenu" parent="gui" instance=ExtResource( 13 )]
+[node name="mainMenu" parent="gui" instance=ExtResource( 20 )]
 margin_left = -26.0
 margin_top = -27.0
 margin_right = -103.0
 margin_bottom = -128.0
 
-[node name="tiersystem" parent="." instance=ExtResource( 14 )]
+[node name="tiersystem" parent="." instance=ExtResource( 21 )]
 visible = false
 [connection signal="start_game" from="gui/mainMenu" to="." method="_on_MainMenu_start_game"]
