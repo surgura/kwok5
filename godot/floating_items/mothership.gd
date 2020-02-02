@@ -18,7 +18,6 @@ func get_target_offset() -> float:
 func _process(_delta):
 	var sprite = get_node("sprite")
 	sprite.offset.y = (63.0 * sprite.offset.y + get_target_offset()) / 64.0
-	print(get_target_rotation())
 	sprite.rotation = (63.0 * sprite.rotation + get_target_rotation()) / 64.0
 
 func repair():
