@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sea/sea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://images/bird_fly02.png" type="Texture" id=3]
+[ext_resource path="res://sea/Node2D.gd" type="Script" id=4]
+
+[node name="cameratest" type="Node2D"]
+
+[node name="sea" parent="." instance=ExtResource( 1 )]
+camera = NodePath("../Node2D/Camera2D")
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 596.654, 286.998 )
+texture = ExtResource( 2 )
+
+[node name="Node2D" type="Sprite" parent="."]
+position = Vector2( 427.999, 184 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false

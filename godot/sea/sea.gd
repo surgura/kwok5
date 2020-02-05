@@ -1,4 +1,7 @@
+tool
 extends Node2D
+
+export(NodePath) var camera_path: NodePath
 
 const Wave = preload("wave.tscn")
 var wave_margin: Vector2 = Vector2(100, 100)
@@ -6,12 +9,14 @@ var wave_extra: int = 3
 var time = 0
 
 func _process(_delta):
+	var camera = get_node(camera_path)
+	
 	var grid_x: int = int(get_viewport().size.x / wave_margin.x)+wave_extra*2
 	var grid_y: int = int(get_viewport().size.y / wave_margin.y)+wave_extra*2
 	
 	resize_waves_pool(grid_x, grid_y)
 	
-	time += _delta * 100
+	time += 0#_delta * 100
 	var offset_x = int(time)
 	var offset_y = int(time)
 	

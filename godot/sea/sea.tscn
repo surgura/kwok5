@@ -4,3 +4,4 @@
 
 [node name="sea" type="Node2D"]
 script = ExtResource( 1 )
+camera = NodePath("")
