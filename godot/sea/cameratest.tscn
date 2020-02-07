@@ -8,7 +8,6 @@
 [node name="cameratest" type="Node2D"]
 
 [node name="sea" parent="." instance=ExtResource( 1 )]
-camera = NodePath("../Node2D/Camera2D")
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 596.654, 286.998 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://everything.gd" type="Script" id=1]
 [ext_resource path="res://floating_items/rock.tscn" type="PackedScene" id=2]
@@ -18,8 +18,7 @@
 [ext_resource path="res://inventory/scenes/InventoryUI.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Compass.tscn" type="PackedScene" id=17]
 [ext_resource path="res://textbox.tscn" type="PackedScene" id=18]
-[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=19]
-[ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=20]
+[ext_resource path="res://inventory/scenes/TierSystemScene.tscn" type="PackedScene" id=19]
 
 [node name="everything" type="Node2D"]
 pause_mode = 2
@@ -601,12 +600,5 @@ margin_right = 522.48
 margin_bottom = 297.375
 world = NodePath("../../world")
 
-[node name="mainMenu" parent="gui" instance=ExtResource( 19 )]
-margin_left = -26.0
-margin_top = -27.0
-margin_right = -103.0
-margin_bottom = -128.0
-
-[node name="tiersystem" parent="." instance=ExtResource( 20 )]
+[node name="tiersystem" parent="." instance=ExtResource( 19 )]
 visible = false
-[connection signal="start_game" from="gui/mainMenu" to="." method="_on_MainMenu_start_game"]
