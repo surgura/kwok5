@@ -54,3 +54,4 @@ func _draw():
 		for x in range(0, width / 2):
 			#draw_circle(Vector2(x*self.dist, y*self.dist), 10+1*self.node_grid[y][x].height, Color(0.5,0.5,0.5))
 			draw_texture(texture, Vector2(x * 2 *self.dist - texture.get_size().x / 2, y*3*self.dist / 2 - self.node_grid[y*3][x*2].height))
+			pass
