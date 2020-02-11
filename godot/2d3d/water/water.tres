@@ -1,0 +1,5 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98

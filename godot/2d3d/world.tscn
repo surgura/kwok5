@@ -7,9 +7,9 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Sprite3D" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="camera" parent="Sprite3D" instance=ExtResource( 2 )]
+transform = Transform( 1, -4.32978e-17, 4.32978e-17, 0, 0.707107, 0.707107, -6.12323e-17, -0.707107, 0.707107, 2.16489e-16, 3.53553, 3.53553 )
 
 [node name="Sprite3D2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.67514 )

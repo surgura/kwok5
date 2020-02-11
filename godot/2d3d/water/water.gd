@@ -1,12 +1,18 @@
 extends ImmediateGeometry
 
+var wavetex = preload("res://images/wave1.png")
 var Node = preload("node.gd")
 var node_grid
-export(int) var width: int = 40
-export(int) var height: int = 40
+export(int) var width: int = 15
+export(int) var height: int = 15
 var dist = 0.5
 
+var wave_size = 1.0
+
 func _ready():
+	var wavemat = preload("res://2d3d/water/water.tres")
+	self.material_override = wavemat
+	
 	self.node_grid = []
 	for y in range(height):
 		self.node_grid.append([])
@@ -25,24 +31,8 @@ func _ready():
 				self.node_grid[y][x].add_neighbour(self.node_grid[y][x+1])
 			
 func _process(delta: float) -> void:
-	"""
 	if Input.is_action_just_pressed("makewave"):
-		var relpos = get_global_mouse_position() - global_position
-		relpos += Vector2(dist/2, dist/2)
-		var gridpos = Vector2(int(relpos.x / self.dist), int(relpos.y / self.dist * 2.0))
-		if gridpos.x < 1:
-			gridpos.x = 1
-		if gridpos.x >= width-1:
-			gridpos.x = width-2
-		if gridpos.y < 1:
-			gridpos.y = 1
-		if gridpos.y >= height-1:
-			gridpos.y = height-2
-		self.node_grid[gridpos.y][gridpos.x].height -= 200
-	"""
-	
-	if Input.is_action_just_pressed("makewave"):
-		self.node_grid[20][20].apply_impulse(-10.0)
+		self.node_grid[7][7].apply_impulse(-10.0)
 	
 	for y in range(0, height):
 		for x in range(0, width):
@@ -67,5 +57,24 @@ func draw():
 			if z != height-1:				
 				add_vertex(Vector3(offsetx + x * dist, node_grid[z][x].height, offsetz + z * dist))
 				add_vertex(Vector3(offsetx + x * dist, node_grid[z+1][x].height, offsetz + (z+1) * dist))
-	
 	end()
+	
+	var cam = get_viewport().get_camera()
+	
+	for z in range(0, height):
+		for x in range(0, width):
+			var trans = Transform().translated(Vector3(offsetx + x * dist, node_grid[z][x].height, offsetz + z * dist)).looking_at(cam.global_transform.origin, Vector3(0, 1, 0))
+			begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, wavetex)
+			set_normal(trans * Vector3(0, 0, -1))
+			set_uv(Vector2(0, 1))
+			add_vertex(trans * Vector3(-wave_size/2, -wave_size, 0))
+			set_normal(trans * Vector3(0, 0, -1))
+			set_uv(Vector2(1, 1))
+			add_vertex(trans * Vector3(wave_size/2, -wave_size, 0))
+			set_normal(trans * Vector3(0, 0, -1))
+			set_uv(Vector2(0, 0))
+			add_vertex(trans * Vector3(-wave_size/2, 0, 0))
+			set_normal(trans * Vector3(0, 0, -1))
+			set_uv(Vector2(1, 0))
+			add_vertex(trans * Vector3(wave_size/2, 0, 0))
+			end()
