@@ -7,7 +7,7 @@ export(int) var width: int = 15
 export(int) var height: int = 15
 var dist = 0.5
 
-var wave_size = 1.0
+var wave_size = 0.75
 
 func _ready():
 	var wavemat = preload("res://2d3d/water/water.tres")
@@ -63,18 +63,21 @@ func draw():
 	
 	for z in range(0, height):
 		for x in range(0, width):
-			var trans = Transform().translated(Vector3(offsetx + x * dist, node_grid[z][x].height, offsetz + z * dist)).looking_at(cam.global_transform.origin, Vector3(0, 1, 0))
-			begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, wavetex)
-			set_normal(trans * Vector3(0, 0, -1))
-			set_uv(Vector2(0, 1))
-			add_vertex(trans * Vector3(-wave_size/2, -wave_size, 0))
-			set_normal(trans * Vector3(0, 0, -1))
-			set_uv(Vector2(1, 1))
-			add_vertex(trans * Vector3(wave_size/2, -wave_size, 0))
-			set_normal(trans * Vector3(0, 0, -1))
-			set_uv(Vector2(0, 0))
-			add_vertex(trans * Vector3(-wave_size/2, 0, 0))
-			set_normal(trans * Vector3(0, 0, -1))
-			set_uv(Vector2(1, 0))
-			add_vertex(trans * Vector3(wave_size/2, 0, 0))
-			end()
+				seed(x + self.width * z)
+				var trans = Transform().translated(Vector3(offsetx + x * dist, 0, offsetz + z * dist + 0.001 * (randi() % 100)))
+				trans = trans.looking_at(trans.origin + Vector3(0, 1, -1), Vector3(0, 1, 0))
+				trans = trans.translated(Vector3(0, node_grid[z][x].height, 0))
+				begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, wavetex)
+				set_normal(trans * Vector3(0, 0, -1))
+				set_uv(Vector2(0, 1))
+				add_vertex(trans * Vector3(-wave_size/2, -wave_size, 0))
+				set_normal(trans * Vector3(0, 0, -1))
+				set_uv(Vector2(1, 1))
+				add_vertex(trans * Vector3(wave_size/2, -wave_size, 0))
+				set_normal(trans * Vector3(0, 0, -1))
+				set_uv(Vector2(0, 0))
+				add_vertex(trans * Vector3(-wave_size/2, 0, 0))
+				set_normal(trans * Vector3(0, 0, -1))
+				set_uv(Vector2(1, 0))
+				add_vertex(trans * Vector3(wave_size/2, 0, 0))
+				end()
