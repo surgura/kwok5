@@ -1,3 +1,4 @@
+tool
 extends ImmediateGeometry
 
 var wavetex = preload("res://images/wave1.png")
@@ -34,11 +35,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("makewave"):
 		self.node_grid[7][7].apply_impulse(-10.0)
 	
-	for y in range(0, height):
-		for x in range(0, width):
+	for y in range(height):
+		for x in range(width):
 			self.node_grid[y][x].prepare(delta)
-	for y in range(0, height):
-		for x in range(0, width):
+	for y in range(height):
+		for x in range(width):
 			self.node_grid[y][x].assign(delta)
 	self.draw()
 			
@@ -59,14 +60,18 @@ func draw():
 				add_vertex(Vector3(offsetx + x * dist, node_grid[z+1][x].height, offsetz + (z+1) * dist))
 	end()
 	
-	var cam = get_viewport().get_camera()
+	var cam_origin
+	if Engine.is_editor_hint():
+		cam_origin = Vector3(0, 100, 100)
+	else:
+		cam_origin = get_viewport().get_camera().transform.origin
 	
 	for z in range(0, height):
 		for x in range(0, width):
 				seed(x + self.width * z)
 				var trans = Transform().translated(Vector3(offsetx + x * dist, 0, offsetz + z * dist + 0.001 * (randi() % 100)))
 				trans = trans.translated(Vector3(0, node_grid[z][x].height, 0))
-				trans = trans.looking_at(trans.origin + cam.transform.origin, Vector3(0, 1, 0))
+				trans = trans.looking_at(trans.origin + cam_origin, Vector3(0, 1, 0))
 				
 				begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, wavetex)
 				set_normal(trans * Vector3(0, 0, -1))
