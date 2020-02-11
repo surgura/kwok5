@@ -65,8 +65,9 @@ func draw():
 		for x in range(0, width):
 				seed(x + self.width * z)
 				var trans = Transform().translated(Vector3(offsetx + x * dist, 0, offsetz + z * dist + 0.001 * (randi() % 100)))
-				trans = trans.looking_at(trans.origin + Vector3(0, 1, -1), Vector3(0, 1, 0))
 				trans = trans.translated(Vector3(0, node_grid[z][x].height, 0))
+				trans = trans.looking_at(trans.origin + cam.transform.origin, Vector3(0, 1, 0))
+				
 				begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, wavetex)
 				set_normal(trans * Vector3(0, 0, -1))
 				set_uv(Vector2(0, 1))
