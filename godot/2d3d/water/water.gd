@@ -4,8 +4,8 @@ extends ImmediateGeometry
 var wavetex = preload("res://images/wave1.png")
 var Node = preload("node.gd")
 var node_grid
-export(int) var width: int = 15
-export(int) var height: int = 15
+export(int) var width: int = 10
+export(int) var height: int = 10
 var dist = 0.5
 
 var wave_size = 0.75
@@ -70,8 +70,8 @@ func draw():
 		for x in range(0, width):
 				seed(x + self.width * z)
 				var trans = Transform().translated(Vector3(offsetx + x * dist, 0, offsetz + z * dist + 0.001 * (randi() % 100)))
-				trans = trans.translated(Vector3(0, node_grid[z][x].height, 0))
 				trans = trans.looking_at(trans.origin + cam_origin, Vector3(0, 1, 0))
+				trans = trans.translated(Vector3(0, 0.25 + node_grid[z][x].height, 0))
 				
 				begin(Mesh.PRIMITIVE_TRIANGLE_STRIP, wavetex)
 				set_normal(trans * Vector3(0, 0, -1))
@@ -87,3 +87,18 @@ func draw():
 				set_uv(Vector2(1, 0))
 				add_vertex(trans * Vector3(wave_size/2, 0, 0))
 				end()
+	begin(Mesh.PRIMITIVE_TRIANGLE_STRIP)
+	set_color(Color(0, 1, 1))
+	#self.material_override.
+	var s = 40
+	var h = -0.5
+	set_normal(Vector3(0, -1, 0))
+	add_vertex(Vector3(-s, h, -s))
+	set_normal(Vector3(0, -1, 0))
+	add_vertex(Vector3(s, h, -s))
+	set_normal(Vector3(0, -1, 0))
+	add_vertex(Vector3(-s, h, s))
+	set_normal(Vector3(0, -1, 0))
+	add_vertex(Vector3(s, h, s))
+	end()
+	

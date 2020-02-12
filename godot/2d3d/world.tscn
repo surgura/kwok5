@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://2d3d/Sprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://2d3d/camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://2d3d/water/water.tscn" type="PackedScene" id=3]
-[ext_resource path="res://2d3d/water/water.tres" type="Material" id=4]
 
 [node name="Spatial" type="Spatial"]
 
@@ -17,4 +16,3 @@ angle = 4.71
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.67514 )
 
 [node name="water" parent="." instance=ExtResource( 3 )]
-material_override = ExtResource( 4 )
